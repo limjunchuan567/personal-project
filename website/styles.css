@@ -59,3 +59,14 @@
   transform: translateY(-10px); /* Moves the card up by 10px */
   box-shadow: 0 15px 25px rgba(241, 3, 3, 0.4); /* Adds a neon cyan glowing shadow */
 }
+/*for awards section*/
+/* show all toggle */
+.awards-more[hidden] { display: none; }
+.awards-more { animation: awardsIn .35s ease both; }
+.awards-toggle {
+  margin-top: 1rem; background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; font-size: .85rem; color: inherit; opacity: .65; text-decoration: underline;
+}
+.awards-toggle:hover { opacity: 1; }
+@keyframes awardsIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
