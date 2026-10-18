@@ -1,0 +1,61 @@
+:root {
+  --nav-color: #123B5D; 
+  --hero-start: #1D6F8A;
+  --hero-end: #2A9D8F;   
+  --card-start: #D9F0EE;
+  --card-end: #E9C46A;
+}
+
+
+.site-body {
+  /* Vibrant rich blue-to-teal gradient */
+  background: linear-gradient(to bottom, #1e3a8a, #0d9488);
+}
+
+
+.site-navbar {
+  /* Deep, vibrant indigo so the navbar pops cleanly */
+  background-color: #4338ca;
+  color: #ffffff;
+}
+
+.site-hero {
+  /* Electric cyan-to-vivid blue gradient */
+  background: linear-gradient(to right, #06b6d4, #2563eb);
+  color: #ffffff;
+}
+.card-1 {
+  /* Vivid neon purple gradient */
+  background: linear-gradient(to bottom, #d946ef, #8b5cf6);
+  color: #ffffff ;
+  
+}
+
+.card-2 {
+  /* Bright neon turquoise/cyan gradient */
+  background: linear-gradient(to bottom, #06b6d4, #3b82f6);
+  color: #ffffff ;
+}
+.site-footer {
+  /* Deep bright electric blue footer */
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.card-img {
+ max-width: 40%;     /* Keeps image proportional to card width */
+  height: auto;       /* Preserves aspect ratio */
+  display: block;
+  margin: 1rem auto;
+  
+}
+/* Target your cards */
+.card-1, .card-2 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* What happens when the mouse hovers over them */
+.card-1:hover, .card-2:hover {
+  transform: translateY(-10px); /* Moves the card up by 10px */
+  box-shadow: 0 15px 25px rgba(241, 3, 3, 0.4); /* Adds a neon cyan glowing shadow */
+}
