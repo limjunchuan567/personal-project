@@ -3,37 +3,739 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS & Engineering Codex // Jacob's Playground</title>
   <base href="../">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Cyberpunk Stylesheet -->
+  <link href="styles.css" rel="stylesheet">
 </head>
-<body class=" site-body d-flex flex-column min-vh-100" >
-  <header>
-    /*test*/
-    <div id="navbar-placeholder"></div>
-    <h1>My Notes</h1>
-    </header>
+<body class="site-body d-flex flex-column min-vh-100">
 
-  <main>
-    <p>Welcome to my website!</p>
-     <iframe
-    src=
-    width="100%"
-    height="700"
-    frameborder="0">
-  </iframe>
+  <!-- Scanlines Effect -->
+  <div class="scanlines-overlay"></div>
+
+  <!-- Interactive Background Canvas -->
+  <canvas id="cyber-canvas" class="cyber-canvas-bg"></canvas>
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Header Banner -->
+  <header class="site-hero text-center" style="padding: 3.5rem 1.5rem 2.5rem;">
+    <div class="container">
+      <div class="hero-tag">
+        <span class="telemetry-dot"></span>
+        <span>KNOWLEDGE REPOSITORY // 8 MODULES INDEXED // READY</span>
+      </div>
+      <h1 class="hero-title cyber-glitch-text" data-original-text="CS & SYSTEMS CODEX">CS & SYSTEMS CODEX</h1>
+      <p class="hero-subtitle">
+        Restructured, organized technical study notes covering C, Algorithms, Memory Management, Data Structures, Python, SQL, and Web Architecture.
+      </p>
+
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button id="expandAllBtn" class="btn-cyber btn-cyber-outline" style="font-size: 0.78rem; padding: 0.4rem 0.9rem;">
+          <i class="bi bi-arrows-expand"></i> EXPAND ALL
+        </button>
+        <button id="collapseAllBtn" class="btn-cyber btn-cyber-outline" style="font-size: 0.78rem; padding: 0.4rem 0.9rem;">
+          <i class="bi bi-arrows-collapse"></i> COLLAPSE ALL
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Codex Container -->
+  <main class="container my-5 flex-grow-1 position-relative" style="z-index: 10; max-width: 1000px;">
+    
+    <!-- Live Search HUD -->
+    <div class="notes-search-box">
+      <i class="bi bi-search notes-search-icon"></i>
+      <input type="text" id="notesSearch" class="notes-search-input" placeholder="Query Codex: e.g. 'malloc', 'binary search', 'sqlite', 'linked list', 'struct', 'pointers'..." autocomplete="off">
+    </div>
+
+    <!-- Category Filter Pills -->
+    <div class="notes-filter-pills" id="filterPills">
+      <button class="notes-pill-btn active" data-filter="all">ALL MODULES (8)</button>
+      <button class="notes-pill-btn" data-filter="c-lang">C & COMPILATION (W1-2)</button>
+      <button class="notes-pill-btn" data-filter="algo-mem">ALGORITHMS & MEMORY (W3-4)</button>
+      <button class="notes-pill-btn" data-filter="ds">DATA STRUCTURES (W5)</button>
+      <button class="notes-pill-btn" data-filter="python">PYTHON (W6)</button>
+      <button class="notes-pill-btn" data-filter="sql">SQL DATABASES (W7)</button>
+      <button class="notes-pill-btn" data-filter="web">WEB ARCHITECTURE (W8)</button>
+    </div>
+
+    <!-- Active Search Counter Feedback -->
+    <div id="searchFeedback" class="mb-3 font-monospace" style="font-size: 0.85rem; color: var(--cyber-cyan); display: none;"></div>
+
+    <!-- ========================================================
+         MODULE 1: C BASICS & TERMINAL
+         ======================================================== -->
+    <article class="note-module cyber-cut active" data-category="c-lang" data-keywords="c hello terminal make gcc clang printf loops variables conditionals functions">
+      <div class="note-module-header">
+        <div class="note-module-title">
+          <span class="note-wk-badge">WK 01</span>
+          <h3>C Fundamentals & Terminal Architecture</h3>
+        </div>
+        <i class="bi bi-chevron-down note-chevron"></i>
+      </div>
+      <div class="note-module-body">
+        
+        <div class="note-subhead">Key Terminal Commands & Workflow</div>
+        <p>In C development, the workflow begins with writing source code, compiling into machine-executable binary, and executing from the terminal:</p>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="code hello.c&#10;make hello&#10;./hello">COPY</button>
+code hello.c   # Create or edit source file
+make hello     # Compile hello.c into executable 'hello' (clang/gcc behind the scenes)
+./hello        # Execute the compiled binary in the current directory
+ls             # List files in current directory
+cd <dir>       # Change directory
+mkdir <dir>    # Create a new directory
+rm <file>      # Remove a file</div>
+
+        <div class="note-subhead">Source Code Structure & Standard Headers</div>
+        <p>Every C program enters through <code>main(void)</code>. Standard headers provide pre-written prototypes:</p>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    string name = get_string(&quot;What is your name? &quot;);
+    printf(&quot;Hello, %s\n&quot;, name);
+    return 0;
+}">COPY</button>
+#include &lt;stdio.h&gt;  // Standard Input/Output (printf)
+#include &lt;cs50.h&gt;   // CS50 Library (get_string, get_int, etc.)
+
+int main(void)
+{
+    string name = get_string("What is your name? ");
+    printf("Hello, %s\n", name);
+    return 0;
+}</div>
+
+        <div class="note-subhead">Format Specifiers & Data Types</div>
+        <table class="cyber-table">
+          <thead>
+            <tr><th>Specifier</th><th>Type</th><th>Example Usage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>%s</code></td><td>string</td><td><code>printf("%s\n", name);</code></td></tr>
+            <tr><td><code>%i</code> / <code>%d</code></td><td>int</td><td><code>printf("Score: %i\n", score);</code></td></tr>
+            <tr><td><code>%c</code></td><td>char</td><td><code>printf("Grade: %c\n", 'A');</code></td></tr>
+            <tr><td><code>%f</code></td><td>float / double</td><td><code>printf("%.2f\n", price); // 2 decimals</code></td></tr>
+            <tr><td><code>%li</code></td><td>long (64-bit int)</td><td><code>printf("Big number: %li\n", big_num);</code></td></tr>
+          </tbody>
+        </table>
+
+        <div class="note-subhead">Conditionals, Loops & Functions</div>
+        <ul>
+          <li><b>Conditionals:</b> <code>if (x &lt; y) { ... } else if (x &gt; y) { ... } else { ... }</code></li>
+          <li><b>Logical Operators:</b> <code>&&</code> (AND), <code>||</code> (OR), <code>!</code> (NOT), <code>==</code> (Equality).</li>
+          <li><b>Loops:</b> <code>while (condition)</code>, <code>for (int i = 0; i &lt; n; i++)</code>. Exit infinite loops using <kbd>Ctrl + C</kbd>.</li>
+          <li><b>Function Prototypes:</b> Always declare function signatures above <code>main()</code> so the compiler recognizes them.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ========================================================
+         MODULE 2: COMPILATION & ARRAYS
+         ======================================================== -->
+    <article class="note-module cyber-cut active" data-category="c-lang" data-keywords="compilation assembly preprocessing assembling linking arrays strings memory null terminator argc argv ctype">
+      <div class="note-module-header">
+        <div class="note-module-title">
+          <span class="note-wk-badge">WK 02</span>
+          <h3>Compilation Pipeline, Arrays & Memory Footprint</h3>
+        </div>
+        <i class="bi bi-chevron-down note-chevron"></i>
+      </div>
+      <div class="note-module-body">
+        
+        <div class="note-subhead">The 4-Stage Compilation Pipeline</div>
+        <p>When you run <code>make program</code>, the compiler executes four distinct transformations:</p>
+        <div class="row g-2 mb-3">
+          <div class="col-md-3">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-info">1. Preprocessing</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Replaces <code>#include</code> with full header code.</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-info">2. Compiling</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Converts C code into assembly instructions.</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-info">3. Assembling</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Translates assembly into binary machine code (0s & 1s).</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-info">4. Linking</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Merges compiled code with library binaries into executable.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note-subhead">Arrays & Contiguous Memory</div>
+        <p>Arrays store values back-to-back in continuous memory bytes using zero-based indexing:</p>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="int scores[3] = {85, 92, 78};
+float average = (scores[0] + scores[1] + scores[2]) / 3.0;">COPY</button>
+int scores[3] = {85, 92, 78};
+// Always cast to float or use 3.0 to prevent integer truncation!
+float average = (scores[0] + scores[1] + scores[2]) / 3.0;</div>
+
+        <div class="note-subhead">Strings as Null-Terminated Arrays</div>
+        <p>A string in C is simply an array of <code>char</code> values terminated by the invisible null character <code>'\0'</code> (ASCII 0):</p>
+        <div class="cyber-callout">
+          <b>Memory Layout of "HI!":</b><br>
+          <code>['H' (72)] ['I' (73)] ['!' (33)] ['\0' (0)]</code> &rarr; Length is 3 characters, but occupies <b>4 bytes</b> in memory!
+        </div>
+
+        <div class="note-subhead">Command-Line Arguments: argc & argv</div>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="int main(int argc, string argv[])
+{
+    if (argc != 2)
+    {
+        printf(&quot;Usage: ./program <name>\n&quot;);
+        return 1; // Non-zero indicates error
+    }
+    printf(&quot;Hello, %s\n&quot;, argv[1]);
+    return 0; // Success
+}">COPY</button>
+int main(int argc, string argv[])
+{
+    // argc: argument count (includes program name itself)
+    // argv: array of strings containing arguments
+    if (argc != 2)
+    {
+        printf("Usage: ./program &lt;name&gt;\n");
+        return 1; // Non-zero indicates exit failure
+    }
+    printf("Hello, %s\n", argv[1]);
+    return 0; // 0 indicates clean exit
+}</div>
+      </div>
+    </article>
+
+    <!-- ========================================================
+         MODULE 3: ALGORITHMS & BIG-O
+         ======================================================== -->
+    <article class="note-module cyber-cut active" data-category="algo-mem" data-keywords="algorithms big o search binary linear sort bubble selection merge struct recursion time complexity">
+      <div class="note-module-header">
+        <div class="note-module-title">
+          <span class="note-wk-badge">WK 03</span>
+          <h3>Algorithms, Asymptotic Complexity & Recursion</h3>
+        </div>
+        <i class="bi bi-chevron-down note-chevron"></i>
+      </div>
+      <div class="note-module-body">
+        
+        <div class="note-subhead">Asymptotic Complexity Notation</div>
+        <ul>
+          <li><b>$O$ (Big-O):</b> Upper bound / worst-case running time.</li>
+          <li><b>$\Omega$ (Big-Omega):</b> Lower bound / best-case running time.</li>
+          <li><b>$\Theta$ (Big-Theta):</b> Exact bound when best-case and worst-case are identical.</li>
+        </ul>
+
+        <div class="note-subhead">Algorithm Comparison Matrix</div>
+        <table class="cyber-table">
+          <thead>
+            <tr><th>Algorithm</th><th>Best Case ($\Omega$)</th><th>Worst Case ($O$)</th><th>Core Mechanism</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Linear Search</b></td><td>$\Omega(1)$</td><td>$O(n)$</td><td>Iterates sequentially one-by-one from index 0.</td></tr>
+            <tr><td><b>Binary Search</b></td><td>$\Omega(1)$</td><td>$O(\log n)$</td><td>Halves search space repeatedly. <i>Requires sorted data!</i></td></tr>
+            <tr><td><b>Selection Sort</b></td><td>$\Omega(n^2)$</td><td>$O(n^2)$</td><td>Scans for smallest element and places it in sorted portion.</td></tr>
+            <tr><td><b>Bubble Sort</b></td><td>$\Omega(n)$</td><td>$O(n^2)$</td><td>Swaps adjacent pairs; terminates early if no swaps occurred.</td></tr>
+            <tr><td><b>Merge Sort</b></td><td>$\Omega(n \log n)$</td><td>$O(n \log n)$</td><td>Recursively divides array into halves and merges sorted sub-arrays.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="note-subhead">Custom Data Types: typedef struct</div>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="typedef struct
+{
+    string name;
+    string phone;
+} person;
+
+person people[2];
+people[0].name = &quot;Jacob&quot;;
+people[0].phone = &quot;+65-8888-0000&quot;;">COPY</button>
+typedef struct
+{
+    string name;
+    string phone;
+} person;
+
+person people[2];
+people[0].name = "Jacob";
+people[0].phone = "+65-8888-0000";</div>
+
+        <div class="note-subhead">Recursion Architecture</div>
+        <p>A recursive function must always satisfy two criteria to prevent stack overflows:</p>
+        <ol>
+          <li><b>Base Case:</b> Stopping condition that returns without calling itself.</li>
+          <li><b>Recursive Case:</b> Calling itself with a reduced sub-problem.</li>
+        </ol>
+      </div>
+    </article>
+
+    <!-- ========================================================
+         MODULE 4: MEMORY & POINTERS
+         ======================================================== -->
+    <article class="note-module cyber-cut active" data-category="algo-mem" data-keywords="pointers memory malloc free heap stack valgrind file io fopen scanf hexadecimal address">
+      <div class="note-module-header">
+        <div class="note-module-title">
+          <span class="note-wk-badge">WK 04</span>
+          <h3>Pointers, Dynamic Memory (malloc/free) & Memory Safety</h3>
+        </div>
+        <i class="bi bi-chevron-down note-chevron"></i>
+      </div>
+      <div class="note-module-body">
+        
+        <div class="note-subhead">Hexadecimal & Memory Addresses</div>
+        <p>Hexadecimal (Base-16: <code>0-9</code> and <code>A-F</code>) represents byte values succinctly. Addresses are prefixed with <code>0x</code>.</p>
+        <ul>
+          <li><code>&</code> operator: Extracts the memory address of a variable (e.g. <code>&x</code>).</li>
+          <li><code>*</code> operator: Dereferences a pointer, accessing the value stored at that address (e.g. <code>*p</code>).</li>
+        </ul>
+
+        <div class="note-subhead">Dynamic Memory Allocation: malloc & free</div>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="// Allocate memory for 3 integers
+int *list = malloc(3 * sizeof(int));
+if (list == NULL)
+{
+    return 1; // Out of memory check
+}
+
+list[0] = 10;
+list[1] = 20;
+list[2] = 30;
+
+// ALWAYS free allocated memory when done!
+free(list);">COPY</button>
+// Allocate heap memory for 3 integers
+int *list = malloc(3 * sizeof(int));
+if (list == NULL)
+{
+    return 1; // Out of memory check!
+}
+
+list[0] = 10;
+list[1] = 20;
+list[2] = 30;
+
+// ALWAYS free dynamically allocated memory to avoid leaks!
+free(list);</div>
+
+        <div class="note-subhead">Computer Memory Layout (Overflow Types)</div>
+        <div class="row g-2 mb-3">
+          <div class="col-md-3">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-danger">Text / Code</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Compiled binary code</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-warning">Globals</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Global variables</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-info">Heap (Grows &darr;)</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">malloc/free memory</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-success">Stack (Grows &uarr;)</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Local variables & frames</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note-subhead">File I/O in C</div>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="FILE *file = fopen(&quot;data.txt&quot;, &quot;w&quot;);
+if (file != NULL)
+{
+    fprintf(file, &quot;Hello, World!\n&quot;);
+    fclose(file);
+}">COPY</button>
+FILE *file = fopen("data.txt", "w"); // Mode: "r" (read), "w" (write), "a" (append)
+if (file == NULL)
+{
+    return 1; // File open error
+}
+fprintf(file, "System status: online\n");
+fclose(file); // Always close open handles!</div>
+      </div>
+    </article>
+
+    <!-- ========================================================
+         MODULE 5: DATA STRUCTURES
+         ======================================================== -->
+    <article class="note-module cyber-cut active" data-category="ds" data-keywords="data structures linked list node bst tree hash table trie queue stack fifo lifo speller">
+      <div class="note-module-header">
+        <div class="note-module-title">
+          <span class="note-wk-badge">WK 05</span>
+          <h3>Data Structures: Linked Lists, Trees, Hash Tables & Tries</h3>
+        </div>
+        <i class="bi bi-chevron-down note-chevron"></i>
+      </div>
+      <div class="note-module-body">
+        
+        <div class="note-subhead">Data Structures Comparison Matrix</div>
+        <table class="cyber-table">
+          <thead>
+            <tr><th>Data Structure</th><th>Lookup Time</th><th>Insertion Time</th><th>Memory Overhead</th><th>Best Use Case</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Array</b></td><td>$O(1)$ by index</td><td>$O(n)$ if resizing</td><td>Minimal (contiguous)</td><td>Fixed size, random access</td></tr>
+            <tr><td><b>Linked List</b></td><td>$O(n)$</td><td>$O(1)$ at head</td><td>1 pointer per element</td><td>Frequent dynamic insertions</td></tr>
+            <tr><td><b>Binary Search Tree (BST)</b></td><td>$O(\log n)$</td><td>$O(\log n)$</td><td>2 pointers (left, right)</td><td>Sorted data with dynamic inserts</td></tr>
+            <tr><td><b>Hash Table</b></td><td>$O(1)$ avg, $O(n)$ worst</td><td>$O(1)$ avg</td><td>Array + list nodes</td><td>Fast key-value dictionary lookups</td></tr>
+            <tr><td><b>Trie</b></td><td>$O(k)$ word length</td><td>$O(k)$ word length</td><td>High (27 pointers per node)</td><td>Prefix lookup, spelling dictionaries</td></tr>
+          </tbody>
+        </table>
+
+        <div class="note-subhead">Linked List Node Definition & Prepended Insert</div>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="typedef struct node
+{
+    int number;
+    struct node *next;
+} node;
+
+// Prepending a new node in O(1) time:
+node *n = malloc(sizeof(node));
+if (n != NULL)
+{
+    n->number = 42;
+    n->next = list;
+    list = n;
+}">COPY</button>
+typedef struct node
+{
+    int number;
+    struct node *next;
+} node;
+
+// Prepend new node in O(1) time:
+node *n = malloc(sizeof(node));
+if (n != NULL)
+{
+    n->number = 42;
+    n->next = list;
+    list = n;
+}</div>
+      </div>
+    </article>
+
+    <!-- ========================================================
+         MODULE 6: PYTHON
+         ======================================================== -->
+    <article class="note-module cyber-cut active" data-category="python" data-keywords="python dict list tuple set range f-strings exceptions try except syntax indentation csv">
+      <div class="note-module-header">
+        <div class="note-module-title">
+          <span class="note-wk-badge">WK 06</span>
+          <h3>Python Architecture & Differences from C</h3>
+        </div>
+        <i class="bi bi-chevron-down note-chevron"></i>
+      </div>
+      <div class="note-module-body">
+        
+        <div class="note-subhead">C vs Python Architecture</div>
+        <ul>
+          <li><b>Interpreted:</b> Python executes scripts line-by-line via interpreter (<code>python file.py</code>), eliminating manual compilation.</li>
+          <li><b>Dynamic Typing:</b> Variables do not require explicit type declaration (<code>x = 42</code> vs <code>int x = 42;</code>).</li>
+          <li><b>Garbage Collected:</b> Memory allocation and deallocation are handled automatically (no <code>malloc</code>/<code>free</code>).</li>
+        </ul>
+
+        <div class="note-subhead">Core Python Data Structures</div>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="# List: ordered, mutable sequence
+scores = [85, 92, 78]
+scores.append(95)
+
+# Tuple: ordered, immutable sequence
+coordinates = (1.3521, 103.8198)
+
+# Dictionary: key-value hash mapping
+person = {
+    &quot;name&quot;: &quot;Jacob&quot;,
+    &quot;role&quot;: &quot;ETPS Scholar&quot;,
+    &quot;skills&quot;: [&quot;C&quot;, &quot;Python&quot;, &quot;SQL&quot;]
+}
+
+# Set: collection of unique values (duplicates removed)
+unique_ids = {101, 102, 103, 101} # {101, 102, 103}">COPY</button>
+# List: ordered, mutable sequence
+scores = [85, 92, 78]
+scores.append(95)
+
+# Tuple: ordered, immutable sequence
+coordinates = (1.3521, 103.8198)
+
+# Dictionary: key-value mapping (O(1) average lookup)
+person = {
+    "name": "Jacob",
+    "role": "ETPS Scholar",
+    "skills": ["C", "Python", "SQL"]
+}
+
+# Set: unique values collection
+unique_tags = {"security", "systems", "security"} # {"security", "systems"}</div>
+
+        <div class="note-subhead">Clean Loops & Safe Input Parsing</div>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="try:
+    x = int(input(&quot;Enter integer: &quot;))
+    print(f&quot;Calculated square: {x ** 2}&quot;)
+except ValueError:
+    print(&quot;Invalid input: not an integer&quot;)">COPY</button>
+try:
+    x = int(input("Enter integer: "))
+    print(f"Calculated square: {x ** 2}")
+except ValueError:
+    print("Invalid input: not an integer")</div>
+      </div>
+    </article>
+
+    <!-- ========================================================
+         MODULE 7: SQL & DATABASES
+         ======================================================== -->
+    <article class="note-module cyber-cut active" data-category="sql" data-keywords="sql database sqlite crud select insert update delete join where group by index table">
+      <div class="note-module-header">
+        <div class="note-module-title">
+          <span class="note-wk-badge">WK 07</span>
+          <h3>SQL, Relational Database Design & Query Optimization</h3>
+        </div>
+        <i class="bi bi-chevron-down note-chevron"></i>
+      </div>
+      <div class="note-module-body">
+        
+        <div class="note-subhead">CRUD Operations in SQL</div>
+        <table class="cyber-table">
+          <thead>
+            <tr><th>Operation</th><th>SQL Keyword</th><th>Command Syntax Example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Create</b></td><td><code>CREATE</code> / <code>INSERT</code></td><td><code>INSERT INTO students (name, gpa) VALUES ('Jacob', 4.0);</code></td></tr>
+            <tr><td><b>Read</b></td><td><code>SELECT</code></td><td><code>SELECT name, gpa FROM students WHERE gpa >= 3.8;</code></td></tr>
+            <tr><td><b>Update</b></td><td><code>UPDATE</code></td><td><code>UPDATE students SET gpa = 4.0 WHERE name = 'Jacob';</code></td></tr>
+            <tr><td><b>Delete</b></td><td><code>DELETE</code></td><td><code>DELETE FROM students WHERE id = 101;</code></td></tr>
+          </tbody>
+        </table>
+
+        <div class="note-callout cyber-callout">
+          <i class="bi bi-exclamation-triangle-fill text-warning me-1"></i>
+          <b>Warning:</b> Always include a <code>WHERE</code> clause in <code>UPDATE</code> and <code>DELETE</code> statements; otherwise, you will modify or wipe out every record in the table!
+        </div>
+
+        <div class="note-subhead">Relational Queries & JOIN Operations</div>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="-- Joining shows and ratings tables on common show_id
+SELECT shows.title, ratings.rating
+FROM shows
+JOIN ratings ON shows.id = ratings.show_id
+WHERE ratings.rating >= 9.0
+ORDER BY ratings.rating DESC
+LIMIT 10;">COPY</button>
+-- Join shows and ratings on common foreign key:
+SELECT shows.title, ratings.rating
+FROM shows
+JOIN ratings ON shows.id = ratings.show_id
+WHERE ratings.rating &gt;= 9.0
+ORDER BY ratings.rating DESC
+LIMIT 10;</div>
+
+        <div class="note-subhead">Database Indexes: O(n) vs O(log n)</div>
+        <p>Without an index, SQLite performs a sequential table scan ($O(n)$). Creating an index constructs a B-Tree, bringing query lookup time down to $O(\log n)$:</p>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="CREATE INDEX title_index ON shows (title);">COPY</button>
+CREATE INDEX title_index ON shows (title);</div>
+      </div>
+    </article>
+
+    <!-- ========================================================
+         MODULE 8: WEB STACK
+         ======================================================== -->
+    <article class="note-module cyber-cut active" data-category="web" data-keywords="html css javascript dom event listener forms selectors web architecture frontend">
+      <div class="note-module-header">
+        <div class="note-module-title">
+          <span class="note-wk-badge">WK 08</span>
+          <h3>Modern Web Stack: HTML5, CSS3 & JavaScript DOM</h3>
+        </div>
+        <i class="bi bi-chevron-down note-chevron"></i>
+      </div>
+      <div class="note-module-body">
+        
+        <div class="note-subhead">The Web Triad Architecture</div>
+        <div class="row g-2 mb-3">
+          <div class="col-md-4">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-danger">HTML5 (Structure)</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Content skeleton & semantic tags (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;form&gt;</code>).</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-info">CSS3 (Presentation)</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Visual styling, layout (Flexbox/Grid), animations & neon glows.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-2 border border-secondary rounded bg-dark">
+              <b class="text-warning">JavaScript (Behavior)</b>
+              <div style="font-size: 0.8rem; color: var(--cyber-text-muted);">Dynamic interactivity, DOM manipulation & asynchronous APIs.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note-subhead">JavaScript DOM Manipulation Pattern</div>
+        <div class="cyber-code-block">
+          <button class="cyber-code-copy-btn" data-copy="document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+    const input = document.querySelector(&quot;#username&quot;);
+    const button = document.querySelector(&quot;#submitBtn&quot;);
+
+    button.addEventListener(&quot;click&quot;, function() {
+        const val = input.value.trim();
+        if (val) {
+            alert(`Welcome, ${val}! Access Granted.`);
+        }
+    });
+});">COPY</button>
+document.addEventListener("DOMContentLoaded", function() {
+    const input = document.querySelector("#username");
+    const button = document.querySelector("#submitBtn");
+
+    button.addEventListener("click", function() {
+        const val = input.value.trim();
+        if (val) {
+            alert(`Welcome, ${val}! Access Granted.`);
+        }
+    });
+});</div>
+      </div>
+    </article>
+
   </main>
 
-  <footer>
-    <p>&copy; 2026 My Portfolio</p>
+  <!-- Cyber Footer -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <div><span style="color: var(--cyber-cyan); font-weight: bold;">JACOB'S CS CODEX</span> // CS50 ARCHIVES</div>
+      <div style="font-size: 0.75rem; color: var(--cyber-text-dim); margin-top: 0.3rem;">
+        8 WEEKS CONSOLIDATED // FULL TEXT SEARCH & CODE EXPORTS ENABLED
+      </div>
+    </div>
   </footer>
-  <script>
-  fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar-placeholder').innerHTML = data;
-    });
-    </script>
+
+  <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Cyberpunk Interactive Engine -->
+  <script src="cyber-effects.js"></script>
+
+  <!-- Codex Interactive Controller -->
+  <script>
+    // Load Shared Navbar
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+        const codexLink = document.querySelector('.site-navbar a[href="notefolder/notes.html"]');
+        if (codexLink) codexLink.classList.add('active');
+        if (window.initCyberpunkEngine) window.initCyberpunkEngine();
+      });
+
+    // Accordion Expansion Toggle
+    document.querySelectorAll('.note-module-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const module = header.parentElement;
+        module.classList.toggle('active');
+        if (window.cyberSFX) window.cyberSFX.playClick();
+      });
+    });
+
+    // Expand / Collapse All
+    const expandBtn = document.getElementById('expandAllBtn');
+    const collapseBtn = document.getElementById('collapseAllBtn');
+    const modules = document.querySelectorAll('.note-module');
+
+    expandBtn.addEventListener('click', () => {
+      modules.forEach(m => m.classList.add('active'));
+    });
+    collapseBtn.addEventListener('click', () => {
+      modules.forEach(m => m.classList.remove('active'));
+    });
+
+    // Category Filter Pills
+    const pillButtons = document.querySelectorAll('.notes-pill-btn');
+    pillButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        pillButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        applyFilter(filter);
+      });
+    });
+
+    function applyFilter(filter) {
+      const searchVal = document.getElementById('notesSearch').value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      modules.forEach(module => {
+        const category = module.getAttribute('data-category');
+        const keywords = module.getAttribute('data-keywords') || '';
+        const text = module.innerText.toLowerCase();
+
+        const matchesCat = (filter === 'all' || category === filter);
+        const matchesSearch = !searchVal || keywords.includes(searchVal) || text.includes(searchVal);
+
+        if (matchesCat && matchesSearch) {
+          module.style.display = 'block';
+          visibleCount++;
+        } else {
+          module.style.display = 'none';
+        }
+      });
+
+      updateSearchFeedback(searchVal, visibleCount);
+    }
+
+    // Live Search
+    const searchInput = document.getElementById('notesSearch');
+    searchInput.addEventListener('input', () => {
+      const activePill = document.querySelector('.notes-pill-btn.active');
+      const filter = activePill ? activePill.getAttribute('data-filter') : 'all';
+      applyFilter(filter);
+    });
+
+    function updateSearchFeedback(query, count) {
+      const fb = document.getElementById('searchFeedback');
+      if (query) {
+        fb.style.display = 'block';
+        fb.innerHTML = `// QUERY: "${query}" &rarr; ${count} MODULE(S) MATCHED`;
+      } else {
+        fb.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>

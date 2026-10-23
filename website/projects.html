@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects Incubator // Jacob's Playground</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="site-body d-flex flex-column min-vh-100">
+  
+  <div class="scanlines-overlay"></div>
+  <canvas id="cyber-canvas" class="cyber-canvas-bg"></canvas>
+  <div id="navbar-placeholder"></div>
+
+  <main class="container my-auto py-5 position-relative text-center" style="z-index: 10; max-width: 680px;">
+    <div class="cyber-card cyber-cut cyber-tilt p-4 p-md-5">
+      <div class="hero-tag mb-3">
+        <span class="telemetry-dot" style="background: var(--cyber-cyan); box-shadow: var(--cyber-cyan-glow);"></span>
+        <span>LABORATORY // MINI APPS UNDER CONSTRUCTION</span>
+      </div>
+
+      <h1 class="hero-title cyber-glitch-text" style="font-size: 2.2rem;" data-original-text="PROJECT INCUBATOR">PROJECT INCUBATOR</h1>
+      
+      <div class="my-4">
+        <i class="bi bi-cpu-fill text-info" style="font-size: 3.5rem; text-shadow: var(--cyber-cyan-glow);"></i>
+      </div>
+
+      <p style="color: var(--cyber-text-muted); font-size: 1.05rem;">
+        An experimental coding sandbox designated for mini web apps, algorithmic visualizers, and interactive software tools.
+      </p>
+
+      <div class="cyber-callout text-start my-4">
+        <i class="bi bi-tools text-warning me-2"></i>
+        <b>Development Pipeline:</b> Mini utilities and experiments are currently being prototyped in C and Python. Check back as new interactive web modules are deployed!
+      </div>
+
+      <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+        <a href="index.html" class="btn-cyber btn-cyber-primary">
+          <i class="bi bi-house-door"></i> Return Home
+        </a>
+        <a href="notefolder/notes.html" class="btn-cyber btn-cyber-outline">
+          <i class="bi bi-journal-code"></i> Browse CS Codex
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <div>JACOB'S PLAYGROUND // PROJECTS MODULE</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="cyber-effects.js"></script>
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+        const projLink = document.querySelector('.site-navbar a[href="projects.html"]');
+        if (projLink) projLink.classList.add('active');
+        if (window.initCyberpunkEngine) window.initCyberpunkEngine();
+      });
+  </script>
+</body>
+</html>

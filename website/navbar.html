@@ -1,30 +1,49 @@
+<nav class="navbar navbar-expand-lg site-navbar">
+  <div class="container-fluid">
+    <a class="cyber-brand" href="index.html">
+      <span style="color: var(--cyber-cyan); text-shadow: var(--cyber-cyan-glow);">⬡</span>
+      <span class="cyber-glitch-text">JACOB'S PLAYGROUND</span>
+      <span class="cyber-brand-badge">V2.06</span>
+    </a>
 
-<nav class="navbar navbar-expand-lg navbar-dark site-navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">JACOB's Playground</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        
-                        
-                       
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="portfolio/port.html">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            More
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="notefolder/notes.html">notes</a></li>
-                            <li><a class="dropdown-item" href="stocks.html">Stocks</a></li>
-                        </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <div class="d-flex align-items-center gap-2 order-lg-last ms-auto ms-lg-3">
+      <button id="cyber-audio-toggle" class="cyber-audio-btn" title="Toggle Futuristic SFX Audio">
+        <i class="bi bi-volume-mute-fill"></i> SFX: OFF
+      </button>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#cyberNavMenu" aria-controls="cyberNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span style="color: var(--cyber-cyan); font-size: 1.5rem;"><i class="bi bi-list"></i></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="cyberNavMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-terminal me-1"></i> HOME
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio/port.html">
+            <i class="bi bi-person-badge me-1"></i> PORTFOLIO
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="notefolder/notes.html">
+            <i class="bi bi-journal-code me-1"></i> CS CODEX <span class="nav-status-pill nav-status-live">8 WKS</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="projects.html">
+            <i class="bi bi-cpu me-1"></i> PROJECTS <span class="nav-status-pill nav-status-dev">STANDBY</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="photos.html">
+            <i class="bi bi-images me-1"></i> PHOTOS <span class="nav-status-pill nav-status-dev">STANDBY</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

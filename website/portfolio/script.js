@@ -1,29 +1,24 @@
 // Hero name: letters pop in one by one
-fetch("../navbar.html")
-  .then(r => r.text())
-  .then(html => {
-    const box = document.getElementById("site-nav");
-    box.innerHTML = html;
-    // scripts inserted with innerHTML don't run, so re-create them
-    box.querySelectorAll("script").forEach(old => {
-      const s = document.createElement("script");
-      if (old.src) s.src = old.getAttribute("src"); else s.textContent = old.textContent;
-      old.replaceWith(s);
-    });
-  });
 const h1 = document.querySelector(".hero h1");
-h1.innerHTML = [...h1.textContent].map((c, i) =>
-  c === " " ? " " : `<span style="animation-delay:${0.1 + i * 0.07}s">${c}</span>`).join("");
+if (h1) {
+  h1.innerHTML = [...h1.textContent].map((c, i) =>
+    c === " " ? " " : `<span style="animation-delay:${0.1 + i * 0.05}s">${c}</span>`).join("");
+}
 
 // Scroll progress bar + active nav link
 const bar = document.getElementById("bar");
 const links = [...document.querySelectorAll(".page-nav a")];
-const secs = links.map(a => document.querySelector(a.getAttribute("href")));
+const secs = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+
 function onScroll() {
   const max = document.documentElement.scrollHeight - innerHeight;
-  bar.style.width = (scrollY / max) * 100 + "%";
+  if (bar && max > 0) {
+    bar.style.width = (scrollY / max) * 100 + "%";
+  }
   let cur = -1;
-  secs.forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * 0.4) cur = i; });
+  secs.forEach((s, i) => { 
+    if (s.getBoundingClientRect().top < innerHeight * 0.4) cur = i; 
+  });
   links.forEach((a, i) => a.classList.toggle("on", i === cur));
 }
 addEventListener("scroll", onScroll, { passive: true });
@@ -35,7 +30,7 @@ const io = new IntersectionObserver(es => es.forEach(e => {
 }), { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-// Accordions
+// Accordions with Cyberpunk Holographic Backdrop
 document.querySelectorAll(".acc > button").forEach(btn => {
   btn.setAttribute("aria-expanded", "false");
   btn.addEventListener("click", () => {
@@ -43,11 +38,13 @@ document.querySelectorAll(".acc > button").forEach(btn => {
     const open = accordion.classList.toggle("open");
     btn.setAttribute("aria-expanded", open);
 
+    if (window.cyberSFX) window.cyberSFX.playClick();
+
     const image = accordion.dataset.bg;
     if (image) {
       accordion.style.backgroundImage = open
-    ? `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url("${image}")`
-    : "none";
+        ? `linear-gradient(rgba(10, 14, 22, 0.88), rgba(10, 14, 22, 0.88)), url("${image}")`
+        : "none";
       accordion.style.backgroundSize = "cover";
       accordion.style.backgroundPosition = "center";
     }
@@ -60,7 +57,7 @@ function setPanelBackground(panel, visible) {
   if (!image) return;
 
   panel.style.backgroundImage = visible
-    ? `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url("${image}")`
+    ? `linear-gradient(rgba(10, 14, 22, 0.88), rgba(10, 14, 22, 0.88)), url("${image}")`
     : "none";
   panel.style.backgroundSize = "cover";
   panel.style.backgroundPosition = "center";
@@ -71,6 +68,7 @@ document.querySelectorAll("[data-tabs]").forEach(group => {
   const panels = [...group.parentElement.querySelectorAll(".panel")];
   panels.forEach(panel => setPanelBackground(panel, panel.classList.contains("show")));
   tabs.forEach((t, i) => t.addEventListener("click", () => {
+    if (window.cyberSFX) window.cyberSFX.playClick();
     tabs.forEach((x, j) => x.setAttribute("aria-selected", i === j));
     panels.forEach((p, j) => {
       const visible = i === j;
@@ -79,14 +77,16 @@ document.querySelectorAll("[data-tabs]").forEach(group => {
     });
   }));
 });
-//awards section
+
+// Awards section toggle
 const awardsToggle = document.getElementById('awards-toggle');
 const awardsMore = document.getElementById('awards-more');
 if (awardsToggle && awardsMore) {
   awardsToggle.addEventListener('click', () => {
+    if (window.cyberSFX) window.cyberSFX.playClick();
     const show = awardsMore.hidden;
     awardsMore.hidden = !show;
     awardsToggle.setAttribute('aria-expanded', show);
-    awardsToggle.textContent = show ? 'Show less' : 'Show all';
+    awardsToggle.textContent = show ? 'Show less' : 'Show all awards';
   });
 }
