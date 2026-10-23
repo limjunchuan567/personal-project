@@ -136,8 +136,7 @@ h1, h2, h3, h4, h5, h6 {
    NAVIGATION BAR
    ============================================================ */
 .site-navbar {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1000;
   background: rgba(10, 15, 36, 0.88);
   backdrop-filter: blur(16px);

@@ -64,10 +64,9 @@ b {
   z-index: 1001;
 }
 
-/* Page Subnav */
+/* Page Subnav - Normal positioning so it scrolls away and never obstructs text */
 .page-nav {
-  position: sticky;
-  top: 60px;
+  position: relative;
   z-index: 20;
   display: flex;
   gap: 0.4rem;
