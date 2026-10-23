@@ -3,41 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jacob's Playground // Cyberpunk Hub</title>
+  <title>Jacob's Playground // Welcome</title>
   
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   
-  <!-- Cyberpunk Stylesheet -->
+  <!-- Vibrant Stylesheet -->
   <link href="styles.css" rel="stylesheet">
 </head>
 <body class="site-body d-flex flex-column min-vh-100">
-  
-  <!-- Scanlines Effect -->
-  <div class="scanlines-overlay"></div>
 
   <!-- Interactive Background Canvas -->
   <canvas id="cyber-canvas" class="cyber-canvas-bg"></canvas>
 
-  <!-- Navigation Bar Placeholder (Pre-filled for direct file:// browsing + dynamic fetch) -->
+  <!-- Navigation Bar Placeholder (Pre-filled for file:// + dynamic fetch) -->
   <div id="navbar-placeholder">
     <nav class="navbar navbar-expand-lg site-navbar">
       <div class="container-fluid">
         <a class="cyber-brand" href="index.html">
-          <span style="color: var(--cyber-cyan); text-shadow: var(--cyber-cyan-glow);">⬡</span>
-          <span class="cyber-glitch-text">JACOB'S PLAYGROUND</span>
-          <span class="cyber-brand-badge">V2.06</span>
+          <span style="color: var(--neon-cyan); text-shadow: var(--neon-cyan-glow); font-size: 1.4rem;">⬡</span>
+          <span>JACOB'S PLAYGROUND</span>
         </a>
 
         <div class="d-flex align-items-center gap-2 order-lg-last ms-auto ms-lg-3">
-          <button id="cyber-audio-toggle" class="cyber-audio-btn" title="Toggle Futuristic SFX Audio">
-            <i class="bi bi-volume-mute-fill"></i> SFX: OFF
+          <button id="cyber-audio-toggle" class="cyber-audio-btn" title="Toggle Sound Effects">
+            <i class="bi bi-volume-mute-fill"></i> Sound: Off
           </button>
 
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#cyberNavMenu" aria-controls="cyberNavMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span style="color: var(--cyber-cyan); font-size: 1.5rem;"><i class="bi bi-list"></i></span>
+            <span style="color: var(--neon-cyan); font-size: 1.6rem;"><i class="bi bi-list"></i></span>
           </button>
         </div>
 
@@ -45,27 +41,27 @@
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
               <a class="nav-link active" href="index.html">
-                <i class="bi bi-terminal me-1"></i> HOME
+                <i class="bi bi-house-door me-1"></i> Home
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="portfolio/port.html">
-                <i class="bi bi-person-badge me-1"></i> PORTFOLIO
+                <i class="bi bi-person-badge me-1"></i> About Me & Awards
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="notefolder/notes.html">
-                <i class="bi bi-journal-code me-1"></i> CS CODEX <span class="nav-status-pill nav-status-live">8 WKS</span>
+                <i class="bi bi-journal-code me-1"></i> Coding Notes <span class="nav-status-pill nav-status-live">8 Weeks</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="projects.html">
-                <i class="bi bi-cpu me-1"></i> PROJECTS <span class="nav-status-pill nav-status-dev">STANDBY</span>
+                <i class="bi bi-laptop me-1"></i> Projects <span class="nav-status-pill nav-status-soon">Coming Soon</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="photos.html">
-                <i class="bi bi-images me-1"></i> PHOTOS <span class="nav-status-pill nav-status-dev">STANDBY</span>
+                <i class="bi bi-camera me-1"></i> Photos <span class="nav-status-pill nav-status-soon">Coming Soon</span>
               </a>
             </li>
           </ul>
@@ -77,34 +73,32 @@
   <!-- Hero Section -->
   <header class="site-hero text-center">
     <div class="container">
-      <div class="hero-tag">
-        <span class="telemetry-dot"></span>
-        <span>SYSTEM ARCHIVE // NODE: ETPS-2026 // ACCESS: GRANTED</span>
+      <div class="hero-welcome-badge">
+        <i class="bi bi-stars text-warning"></i>
+        <span>WELCOME TO JACOB'S PLAYGROUND</span>
       </div>
       
-      <h1 class="hero-title cyber-glitch-text" data-original-text="JACOB'S PLAYGROUND">JACOB'S PLAYGROUND</h1>
+      <h1 class="hero-title cyber-glitch-text" data-original-text="JACOB'S PLAYGROUND">Jacob's Playground</h1>
       <p class="hero-subtitle">
-        Engineering, algorithms, systems design & creative experimentation. Transforming messy notes and complex technical concepts into structured digital intelligence.
+        Hi, I'm Jun Chuan (Jacob)! Welcome to my personal space where I share my scholarship journey, community leadership projects, and organized, easy-to-read computer science study notes.
       </p>
 
       <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap mt-4">
         <a href="notefolder/notes.html" class="btn-cyber btn-cyber-primary">
-          <i class="bi bi-journal-code"></i> Open CS Codex
+          <i class="bi bi-journal-code"></i> Explore Coding Notes
         </a>
         <a href="portfolio/port.html" class="btn-cyber btn-cyber-magenta">
-          <i class="bi bi-person-badge"></i> View Dossier
+          <i class="bi bi-person-badge"></i> Read About Me & Awards
         </a>
         <a href="https://github.com" target="_blank" rel="noopener" class="btn-cyber btn-cyber-outline">
-          <i class="bi bi-github"></i> GitHub Dossier
+          <i class="bi bi-github"></i> Visit My GitHub
         </a>
       </div>
 
-      <!-- Telemetry Strip -->
-      <div class="cyber-telemetry">
-        <span><i class="bi bi-cpu text-info"></i> STATUS: <b>OPTIMAL (60 FPS)</b></span>
-        <span><i class="bi bi-shield-check text-warning"></i> CIPHER: <b>TLS 1.3</b></span>
-        <span><i class="bi bi-award text-danger"></i> SCHOLAR: <b>MOE ETPS</b></span>
-        <span><i class="bi bi-geo-alt text-success"></i> LOCATION: <b>SINGAPORE</b></span>
+      <div class="d-flex justify-content-center gap-4 flex-wrap mt-4 pt-3 border-top border-white border-opacity-10 text-muted" style="font-size: 0.9rem;">
+        <span><i class="bi bi-award text-warning me-1"></i> MOE ETPS Scholar</span>
+        <span><i class="bi bi-laptop text-info me-1"></i> Computer Science & Engineering</span>
+        <span><i class="bi bi-geo-alt text-success me-1"></i> Singapore</span>
       </div>
     </div>
   </header>
@@ -113,173 +107,176 @@
   <main class="container my-5 flex-grow-1 position-relative" style="z-index: 10;">
     <div class="row g-4">
       
-      <!-- Card 1: System Briefing & Bio -->
+      <!-- Card 1: About Me (Profile) -->
       <div class="col-lg-6">
-        <div class="cyber-card cyber-cut cyber-tilt h-100">
+        <div class="cyber-card cyber-tilt h-100">
           <div class="cyber-card-header">
             <h2 class="cyber-card-title">
-              <i class="bi bi-terminal-split text-info me-2"></i> SYSTEM OPERATOR
+              <i class="bi bi-person-circle text-info me-2"></i> About Me
             </h2>
-            <span class="cyber-card-code">// 01_PROFILE</span>
+            <span class="cyber-badge cyber-badge-cyan">Profile</span>
           </div>
 
           <div class="row align-items-center mb-3">
             <div class="col-sm-4 text-center mb-3 mb-sm-0">
-              <div style="position: relative; display: inline-block;">
-                <img src="images/portrait.jpg" alt="Jacob Lim Jun Chuan" class="img-fluid rounded" style="border: 2px solid var(--cyber-cyan); box-shadow: var(--cyber-cyan-glow); max-height: 160px; object-fit: cover;">
-                <div style="position: absolute; bottom: -8px; right: -8px;">
-                  <span class="cyber-badge cyber-badge-cyan" style="font-size: 0.65rem;">ACTIVE</span>
-                </div>
-              </div>
+              <img src="images/portrait.jpg" alt="Lim Jun Chuan" class="img-fluid rounded-circle shadow" style="border: 3px solid var(--neon-cyan); box-shadow: var(--neon-cyan-glow); width: 140px; height: 140px; object-fit: cover;">
             </div>
             <div class="col-sm-8">
-              <h4 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.3rem;">LIM JUN CHUAN</h4>
-              <p style="font-size: 0.88rem; color: var(--cyber-cyan); font-family: var(--font-mono); margin-bottom: 0.6rem;">
-                MOE Engineering & Tech Programme Scholar (ETPS)
+              <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.3rem;">Lim Jun Chuan</h3>
+              <p style="font-size: 0.92rem; color: var(--neon-cyan); font-weight: 600; margin-bottom: 0.6rem;">
+                MOE Engineering & Tech Programme Scholar
               </p>
-              <p style="font-size: 0.92rem; color: var(--cyber-text-muted); margin: 0;">
-                Passionate about applying technology with human empathy. Experienced in cross-functional engineering at BorgWarner, community leadership, and computer science fundamentals.
+              <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+                I believe technology is most powerful when it serves a human purpose. From interning in engineering at BorgWarner to leading community literacy and accessibility initiatives, I love solving real-world problems.
               </p>
             </div>
           </div>
 
-          <div class="d-flex flex-wrap gap-2 mt-3 pt-3 border-top border-secondary border-opacity-25">
-            <span class="cyber-badge cyber-badge-cyan">C / C++</span>
-            <span class="cyber-badge cyber-badge-magenta">PYTHON</span>
-            <span class="cyber-badge cyber-badge-yellow">SQLITE</span>
-            <span class="cyber-badge cyber-badge-purple">DATA STRUCTURES</span>
-            <span class="cyber-badge cyber-badge-cyan">ALGORITHMS</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2: Knowledge Base & CS Codex -->
-      <div class="col-lg-6">
-        <div class="cyber-card cyber-cut cyber-tilt cyber-card-magenta h-100">
-          <div class="cyber-card-header">
-            <h2 class="cyber-card-title">
-              <i class="bi bi-cpu-fill text-danger me-2"></i> KNOWLEDGE CODEX
-            </h2>
-            <span class="cyber-card-code">// 02_CS50_VAULT</span>
+          <div class="d-flex flex-wrap gap-2 mt-3 pt-3 border-top border-white border-opacity-10">
+            <span class="cyber-badge cyber-badge-cyan">C Programming</span>
+            <span class="cyber-badge cyber-badge-magenta">Python</span>
+            <span class="cyber-badge cyber-badge-yellow">SQL Databases</span>
+            <span class="cyber-badge cyber-badge-green">Web Development</span>
+            <span class="cyber-badge cyber-badge-purple">Algorithms</span>
           </div>
 
-          <p style="color: var(--cyber-text-muted); font-size: 0.95rem;">
-            Raw, messy Google Docs notes have been synthesized, categorized, and structured into an interactive cyberpunk study database covering 8 weeks of computer science fundamentals:
-          </p>
-
-          <div class="row g-2 my-2 font-monospace" style="font-size: 0.82rem;">
-            <div class="col-6">
-              <div class="p-2 rounded" style="background: rgba(0, 240, 255, 0.08); border-left: 2px solid var(--cyber-cyan);">
-                <b>WK 01-02:</b> C & Memory Pipeline
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="p-2 rounded" style="background: rgba(255, 0, 85, 0.08); border-left: 2px solid var(--cyber-magenta);">
-                <b>WK 03-04:</b> Big-O, Pointers, Heap
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="p-2 rounded" style="background: rgba(252, 238, 10, 0.08); border-left: 2px solid var(--cyber-yellow);">
-                <b>WK 05:</b> Linked Lists, BST, Tries
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="p-2 rounded" style="background: rgba(157, 78, 221, 0.08); border-left: 2px solid var(--cyber-purple);">
-                <b>WK 06-08:</b> Python, SQL, Web Stack
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-4 pt-2">
-            <a href="notefolder/notes.html" class="btn-cyber btn-cyber-magenta w-100 justify-content-center">
-              <i class="bi bi-search"></i> Launch Interactive Codex (With Search)
+          <div class="mt-4">
+            <a href="portfolio/port.html" class="btn-cyber btn-cyber-outline w-100 justify-content-center">
+              <i class="bi bi-arrow-right-circle"></i> Read My Story & Official Testimonials
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Card 3: Experience Matrix -->
+      <!-- Card 2: Coding Notes & CS50 Guides -->
       <div class="col-lg-6">
-        <div class="cyber-card cyber-cut cyber-tilt h-100">
+        <div class="cyber-card cyber-card-teal cyber-tilt h-100">
           <div class="cyber-card-header">
             <h2 class="cyber-card-title">
-              <i class="bi bi-briefcase text-warning me-2"></i> EXPERIENCE DOSSIER
+              <i class="bi bi-journal-code text-success me-2"></i> Computer Science Notes
             </h2>
-            <span class="cyber-card-code">// 03_TRACK_RECORD</span>
+            <span class="cyber-badge cyber-badge-green">8 Modules</span>
           </div>
 
-          <ul class="list-unstyled mb-3" style="font-size: 0.92rem;">
-            <li class="mb-2 pb-2 border-bottom border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
-              <div>
-                <strong class="text-white">BorgWarner</strong>
-                <span class="text-muted d-block" style="font-size: 0.8rem;">Engineering Internship & Process Optimization</span>
-              </div>
-              <span class="cyber-badge cyber-badge-cyan">INDUSTRY</span>
-            </li>
-            <li class="mb-2 pb-2 border-bottom border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
-              <div>
-                <strong class="text-white">Disability Awareness Carnival</strong>
-                <span class="text-muted d-block" style="font-size: 0.8rem;">Lead Organizer & Experiential Simulation Designer</span>
-              </div>
-              <span class="cyber-badge cyber-badge-magenta">LEADERSHIP</span>
-            </li>
-            <li class="mb-2 pb-2 border-bottom border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
-              <div>
-                <strong class="text-white">Project Reminiscence & Reading Wonders</strong>
-                <span class="text-muted d-block" style="font-size: 0.8rem;">Elderly Engagement & Primary Literacy Mentorship</span>
-              </div>
-              <span class="cyber-badge cyber-badge-yellow">COMMUNITY</span>
-            </li>
-          </ul>
+          <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.2rem;">
+            I cleaned up and organized my CS50 study notes into clear, easy-to-read guides with live search, copy-paste code snippets, and cheat sheets:
+          </p>
 
-          <a href="portfolio/port.html#experience" class="btn-cyber btn-cyber-outline w-100 justify-content-center">
-            <i class="bi bi-arrow-right-circle"></i> Inspect Full Dossier & Testimonials
-          </a>
+          <div class="row g-2 mb-3" style="font-size: 0.88rem;">
+            <div class="col-6">
+              <div class="p-2 rounded bg-dark bg-opacity-50 border border-info border-opacity-25">
+                <b class="text-info">Weeks 1–2:</b> C Basics & Memory
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-2 rounded bg-dark bg-opacity-50 border border-danger border-opacity-25">
+                <b class="text-danger">Weeks 3–4:</b> Algorithms & Pointers
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-2 rounded bg-dark bg-opacity-50 border border-warning border-opacity-25">
+                <b class="text-warning">Week 5:</b> Data Structures & Trees
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-2 rounded bg-dark bg-opacity-50 border border-success border-opacity-25">
+                <b class="text-success">Weeks 6–8:</b> Python, SQL & Web Stack
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-auto pt-2">
+            <a href="notefolder/notes.html" class="btn-cyber btn-cyber-primary w-100 justify-content-center">
+              <i class="bi bi-search"></i> Open Coding Notes (With Live Search)
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- Card 4: Future Modules / Standby Matrix -->
+      <!-- Card 3: School Activities & Photos (CCA) -->
       <div class="col-lg-6">
-        <div class="cyber-card cyber-cut cyber-tilt h-100">
+        <div class="cyber-card cyber-card-purple cyber-tilt h-100">
           <div class="cyber-card-header">
             <h2 class="cyber-card-title">
-              <i class="bi bi-hdd-network text-info me-2"></i> SYSTEM EXPANSION
+              <i class="bi bi-images text-warning me-2"></i> School Activities & CCA Photos
             </h2>
-            <span class="cyber-card-code">// 04_STANDBY_NODES</span>
+            <span class="cyber-badge cyber-badge-purple">Activities</span>
           </div>
 
-          <div class="cyber-table-wrapper">
-            <table class="cyber-table">
-              <thead>
-                <tr>
-                  <th>MODULE</th>
-                  <th>DESCRIPTION</th>
-                  <th>STATUS</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><a href="projects.html" class="text-info text-decoration-none">Projects</a></td>
-                  <td>Interactive coding tools & mini web apps</td>
-                  <td><span class="nav-status-pill nav-status-dev">STANDBY</span></td>
-                </tr>
-                <tr>
-                  <td><a href="photos.html" class="text-info text-decoration-none">Holiday Photos</a></td>
-                  <td>Travel & life photography archives</td>
-                  <td><span class="nav-status-pill nav-status-dev">SYNC PENDING</span></td>
-                </tr>
-                <tr>
-                  <td><a href="portfolio/port.html#awards" class="text-info text-decoration-none">Awards</a></td>
-                  <td>MOE ETPS, Edusave, AMC, UNSW Science</td>
-                  <td><span class="nav-status-pill nav-status-live">VERIFIED</span></td>
-                </tr>
-              </tbody>
-            </table>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Highlights from my leadership roles in Chinese Orchestra and the School Media Editorial Club:
+          </p>
+
+          <div class="row g-3 my-2">
+            <div class="col-6">
+              <div class="rounded overflow-hidden border border-white border-opacity-25 shadow-sm" style="height: 120px;">
+                <img src="images/chinese-orchestra-card.png" alt="Chinese Orchestra" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="text-center mt-2" style="font-size: 0.82rem; font-weight: 600; color: #fff;">
+                Chinese Orchestra (SYF Distinction)
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="rounded overflow-hidden border border-white border-opacity-25 shadow-sm" style="height: 120px;">
+                <img src="images/editorial-club-card.png" alt="Editorial Club" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="text-center mt-2" style="font-size: 0.82rem; font-weight: 600; color: #fff;">
+                Editorial Club Media Team
+              </div>
+            </div>
           </div>
+
+          <div class="mt-4">
+            <a href="portfolio/port.html#cca" class="btn-cyber btn-cyber-outline w-100 justify-content-center">
+              <i class="bi bi-arrow-right-circle"></i> View Full CCA Story
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Experiences & Upcoming Pages -->
+      <div class="col-lg-6">
+        <div class="cyber-card cyber-card-magenta cyber-tilt h-100">
+          <div class="cyber-card-header">
+            <h2 class="cyber-card-title">
+              <i class="bi bi-briefcase-fill text-danger me-2"></i> Internship & Initiatives
+            </h2>
+            <span class="cyber-badge cyber-badge-magenta">Experience</span>
+          </div>
+
+          <ul class="list-unstyled mb-3" style="font-size: 0.95rem;">
+            <li class="mb-2 pb-2 border-bottom border-white border-opacity-10 d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="text-white">BorgWarner</strong>
+                <span class="text-muted d-block" style="font-size: 0.85rem;">Engineering Internship & Team Collaboration</span>
+              </div>
+              <span class="cyber-badge cyber-badge-cyan">Internship</span>
+            </li>
+            <li class="mb-2 pb-2 border-bottom border-white border-opacity-10 d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="text-white">Disability Awareness Carnival</strong>
+                <span class="text-muted d-block" style="font-size: 0.85rem;">National-level experiential simulation organizer</span>
+              </div>
+              <span class="cyber-badge cyber-badge-yellow">Leadership</span>
+            </li>
+            <li class="mb-2 pb-2 border-bottom border-white border-opacity-10 d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="text-white">Reading Wonders & Project Reminiscence</strong>
+                <span class="text-muted d-block" style="font-size: 0.85rem;">Primary literacy tutoring & elderly nature outings</span>
+              </div>
+              <span class="cyber-badge cyber-badge-green">Community</span>
+            </li>
+          </ul>
 
           <div class="cyber-callout mt-3">
-            <i class="bi bi-info-circle-fill me-1"></i>
-            <b>Notice:</b> Photo archives and mini project experiments will be synchronized once hardware data transfer link is established.
+            <i class="bi bi-info-circle text-info me-1"></i>
+            <b>What's coming next:</b> A personal photo gallery for vacation memories and interactive coding mini-apps are currently being created!
+          </div>
+
+          <div class="mt-3">
+            <a href="portfolio/port.html#experience" class="btn-cyber btn-cyber-magenta w-100 justify-content-center">
+              <i class="bi bi-award"></i> View My Full Awards & Experiences
+            </a>
           </div>
         </div>
       </div>
@@ -287,19 +284,19 @@
     </div>
   </main>
 
-  <!-- Cyber Footer -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
         <div>
-          <span style="color: var(--cyber-cyan); font-weight: bold;">JACOB'S PLAYGROUND</span> // 2026 EDITION
-          <div style="font-size: 0.75rem; color: var(--cyber-text-dim);">
-            BUILT WITH HTML5, CSS3, BOOTSTRAP 5 & HIGH-TECH JAVASCRIPT
+          <span style="color: var(--neon-cyan); font-weight: 700; font-family: var(--font-display);">JACOB'S PLAYGROUND</span>
+          <div style="font-size: 0.82rem; color: var(--text-dim); margin-top: 0.2rem;">
+            Personal website of Lim Jun Chuan · Engineering, Leadership & Computer Science
           </div>
         </div>
         <div>
-          <a href="#top" class="btn-cyber btn-cyber-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">
-            <i class="bi bi-chevron-up"></i> RETURN TO TOP
+          <a href="#top" class="btn-cyber btn-cyber-outline" style="padding: 0.45rem 1rem; font-size: 0.8rem;">
+            <i class="bi bi-arrow-up"></i> Back to Top
           </a>
         </div>
       </div>
@@ -308,7 +305,6 @@
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
   <!-- Cyberpunk Interactive Engine -->
   <script src="cyber-effects.js"></script>
 
@@ -318,7 +314,6 @@
       .then(response => response.text())
       .then(html => {
         document.getElementById('navbar-placeholder').innerHTML = html;
-        // Mark active
         const homeLink = document.querySelector('.site-navbar a[href="index.html"]');
         if (homeLink) homeLink.classList.add('active');
         if (window.initCyberpunkEngine) window.initCyberpunkEngine();

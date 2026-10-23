@@ -3,32 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects Incubator // Jacob's Playground</title>
+  <title>Projects // Jacob's Playground</title>
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link href="styles.css" rel="stylesheet">
 </head>
 <body class="site-body d-flex flex-column min-vh-100">
-  
-  <div class="scanlines-overlay"></div>
+
+  <!-- Interactive Background Canvas -->
   <canvas id="cyber-canvas" class="cyber-canvas-bg"></canvas>
+
+  <!-- Navbar Placeholder (Pre-filled for file:// + dynamic fetch) -->
   <div id="navbar-placeholder">
     <nav class="navbar navbar-expand-lg site-navbar">
       <div class="container-fluid">
         <a class="cyber-brand" href="index.html">
-          <span style="color: var(--cyber-cyan); text-shadow: var(--cyber-cyan-glow);">⬡</span>
-          <span class="cyber-glitch-text">JACOB'S PLAYGROUND</span>
-          <span class="cyber-brand-badge">V2.06</span>
+          <span style="color: var(--neon-cyan); text-shadow: var(--neon-cyan-glow); font-size: 1.4rem;">⬡</span>
+          <span>JACOB'S PLAYGROUND</span>
         </a>
 
         <div class="d-flex align-items-center gap-2 order-lg-last ms-auto ms-lg-3">
-          <button id="cyber-audio-toggle" class="cyber-audio-btn" title="Toggle Futuristic SFX Audio">
-            <i class="bi bi-volume-mute-fill"></i> SFX: OFF
+          <button id="cyber-audio-toggle" class="cyber-audio-btn" title="Toggle Sound Effects">
+            <i class="bi bi-volume-mute-fill"></i> Sound: Off
           </button>
 
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#cyberNavMenu" aria-controls="cyberNavMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span style="color: var(--cyber-cyan); font-size: 1.5rem;"><i class="bi bi-list"></i></span>
+            <span style="color: var(--neon-cyan); font-size: 1.6rem;"><i class="bi bi-list"></i></span>
           </button>
         </div>
 
@@ -36,27 +37,27 @@
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
               <a class="nav-link" href="index.html">
-                <i class="bi bi-terminal me-1"></i> HOME
+                <i class="bi bi-house-door me-1"></i> Home
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="portfolio/port.html">
-                <i class="bi bi-person-badge me-1"></i> PORTFOLIO
+                <i class="bi bi-person-badge me-1"></i> About Me & Awards
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="notefolder/notes.html">
-                <i class="bi bi-journal-code me-1"></i> CS CODEX <span class="nav-status-pill nav-status-live">8 WKS</span>
+                <i class="bi bi-journal-code me-1"></i> Coding Notes <span class="nav-status-pill nav-status-live">8 Weeks</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="projects.html">
-                <i class="bi bi-cpu me-1"></i> PROJECTS <span class="nav-status-pill nav-status-dev">STANDBY</span>
+                <i class="bi bi-laptop me-1"></i> Projects <span class="nav-status-pill nav-status-soon">Coming Soon</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="photos.html">
-                <i class="bi bi-images me-1"></i> PHOTOS <span class="nav-status-pill nav-status-dev">STANDBY</span>
+                <i class="bi bi-camera me-1"></i> Photos <span class="nav-status-pill nav-status-soon">Coming Soon</span>
               </a>
             </li>
           </ul>
@@ -66,25 +67,25 @@
   </div>
 
   <main class="container my-auto py-5 position-relative text-center" style="z-index: 10; max-width: 680px;">
-    <div class="cyber-card cyber-cut cyber-tilt p-4 p-md-5">
-      <div class="hero-tag mb-3">
-        <span class="telemetry-dot" style="background: var(--cyber-cyan); box-shadow: var(--cyber-cyan-glow);"></span>
-        <span>LABORATORY // MINI APPS UNDER CONSTRUCTION</span>
+    <div class="cyber-card p-4 p-md-5">
+      <div class="hero-welcome-badge mb-3">
+        <i class="bi bi-tools text-warning me-1"></i>
+        <span>CURRENTLY IN DEVELOPMENT</span>
       </div>
 
-      <h1 class="hero-title cyber-glitch-text" style="font-size: 2.2rem;" data-original-text="PROJECT INCUBATOR">PROJECT INCUBATOR</h1>
+      <h1 class="hero-title cyber-glitch-text" style="font-size: 2.2rem;" data-original-text="Mini Coding Projects">Mini Coding Projects</h1>
       
       <div class="my-4">
-        <i class="bi bi-cpu-fill text-info" style="font-size: 3.5rem; text-shadow: var(--cyber-cyan-glow);"></i>
+        <i class="bi bi-laptop text-info" style="font-size: 3.5rem; text-shadow: var(--neon-cyan-glow);"></i>
       </div>
 
-      <p style="color: var(--cyber-text-muted); font-size: 1.05rem;">
-        An experimental coding sandbox designated for mini web apps, algorithmic visualizers, and interactive software tools.
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
+        This page will host interactive web tools, mini coding experiments, and algorithm visualizers that I build as I learn.
       </p>
 
       <div class="cyber-callout text-start my-4">
-        <i class="bi bi-tools text-warning me-2"></i>
-        <b>Development Pipeline:</b> Mini utilities and experiments are currently being prototyped in C and Python. Check back as new interactive web modules are deployed!
+        <i class="bi bi-stars text-warning me-2"></i>
+        <b>Coming Soon:</b> Mini interactive projects and scripts are being developed and will be linked directly to this space!
       </div>
 
       <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
@@ -92,7 +93,7 @@
           <i class="bi bi-house-door"></i> Return Home
         </a>
         <a href="notefolder/notes.html" class="btn-cyber btn-cyber-outline">
-          <i class="bi bi-journal-code"></i> Browse CS Codex
+          <i class="bi bi-journal-code"></i> Explore Coding Notes
         </a>
       </div>
     </div>
@@ -100,7 +101,7 @@
 
   <footer class="site-footer">
     <div class="container text-center">
-      <div>JACOB'S PLAYGROUND // PROJECTS MODULE</div>
+      <div>JACOB'S PLAYGROUND // PROJECTS</div>
     </div>
   </footer>
 

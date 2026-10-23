@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lim Jun Chuan // Scholarship Dossier</title>
+  <title>Lim Jun Chuan // About Me & Awards</title>
   <base href="../">
 
   <!-- Bootstrap CSS -->
@@ -11,38 +11,34 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <!-- Core Cyber Styles + Portfolio Overrides -->
+  <!-- Core Cyber Styles + Portfolio Styles -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="portfolio/style.css">
 </head>
 <body class="site-body">
-  
-  <!-- Scanlines Effect -->
-  <div class="scanlines-overlay"></div>
 
-  <!-- Interactive Cyber Background Canvas -->
+  <!-- Interactive Background Canvas -->
   <canvas id="cyber-canvas" class="cyber-canvas-bg"></canvas>
 
   <!-- Scroll Progress Indicator -->
   <div id="bar"></div>
 
-  <!-- Global Shared Navbar Placeholder (Pre-filled for file:// + dynamic fetch) -->
+  <!-- Shared Navbar Placeholder (Pre-filled for file:// + dynamic fetch) -->
   <div id="site-nav">
     <nav class="navbar navbar-expand-lg site-navbar">
       <div class="container-fluid">
         <a class="cyber-brand" href="index.html">
-          <span style="color: var(--cyber-cyan); text-shadow: var(--cyber-cyan-glow);">⬡</span>
-          <span class="cyber-glitch-text">JACOB'S PLAYGROUND</span>
-          <span class="cyber-brand-badge">V2.06</span>
+          <span style="color: var(--neon-cyan); text-shadow: var(--neon-cyan-glow); font-size: 1.4rem;">⬡</span>
+          <span>JACOB'S PLAYGROUND</span>
         </a>
 
         <div class="d-flex align-items-center gap-2 order-lg-last ms-auto ms-lg-3">
-          <button id="cyber-audio-toggle" class="cyber-audio-btn" title="Toggle Futuristic SFX Audio">
-            <i class="bi bi-volume-mute-fill"></i> SFX: OFF
+          <button id="cyber-audio-toggle" class="cyber-audio-btn" title="Toggle Sound Effects">
+            <i class="bi bi-volume-mute-fill"></i> Sound: Off
           </button>
 
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#cyberNavMenu" aria-controls="cyberNavMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span style="color: var(--cyber-cyan); font-size: 1.5rem;"><i class="bi bi-list"></i></span>
+            <span style="color: var(--neon-cyan); font-size: 1.6rem;"><i class="bi bi-list"></i></span>
           </button>
         </div>
 
@@ -50,27 +46,27 @@
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
               <a class="nav-link" href="index.html">
-                <i class="bi bi-terminal me-1"></i> HOME
+                <i class="bi bi-house-door me-1"></i> Home
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="portfolio/port.html">
-                <i class="bi bi-person-badge me-1"></i> PORTFOLIO
+                <i class="bi bi-person-badge me-1"></i> About Me & Awards
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="notefolder/notes.html">
-                <i class="bi bi-journal-code me-1"></i> CS CODEX <span class="nav-status-pill nav-status-live">8 WKS</span>
+                <i class="bi bi-journal-code me-1"></i> Coding Notes <span class="nav-status-pill nav-status-live">8 Weeks</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="projects.html">
-                <i class="bi bi-cpu me-1"></i> PROJECTS <span class="nav-status-pill nav-status-dev">STANDBY</span>
+                <i class="bi bi-laptop me-1"></i> Projects <span class="nav-status-pill nav-status-soon">Coming Soon</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="photos.html">
-                <i class="bi bi-images me-1"></i> PHOTOS <span class="nav-status-pill nav-status-dev">STANDBY</span>
+                <i class="bi bi-camera me-1"></i> Photos <span class="nav-status-pill nav-status-soon">Coming Soon</span>
               </a>
             </li>
           </ul>
@@ -82,71 +78,103 @@
   <!-- In-Page Section Navigation -->
   <nav class="page-nav">
     <a href="#experience"><i class="bi bi-briefcase me-1"></i> Experiences</a>
-    <a href="#awards"><i class="bi bi-award me-1"></i> Awards</a>
-    <a href="#cca"><i class="bi bi-people me-1"></i> CCA</a>
-    <a href="#testimonials"><i class="bi bi-chat-square-quote me-1"></i> Testimonials</a>
-    <a href="#list"><i class="bi bi-list-check me-1"></i> Award Index</a>
-    <a href="#personality"><i class="bi bi-compass me-1"></i> Philosophy</a>
-    <a href="#links"><i class="bi bi-link-45deg me-1"></i> Certifications</a>
+    <a href="#awards"><i class="bi bi-trophy me-1"></i> Awards</a>
+    <a href="#cca"><i class="bi bi-people me-1"></i> School Activities (CCA)</a>
+    <a href="#testimonials"><i class="bi bi-chat-quote me-1"></i> Teacher Testimonials</a>
+    <a href="#list"><i class="bi bi-list-check me-1"></i> Award List</a>
+    <a href="#personality"><i class="bi bi-compass me-1"></i> Personal Philosophy</a>
+    <a href="#links"><i class="bi bi-file-earmark-pdf me-1"></i> Certificates</a>
   </nav>
 
-  <!-- Hero Dossier -->
+  <!-- Hero Header -->
   <header class="hero">
-    <div class="hero-tag mb-2">
-      <span class="telemetry-dot"></span>
-      <span>SCHOLARSHIP DOSSIER // VERIFIED RECORD</span>
+    <div class="hero-welcome-badge mb-2">
+      <i class="bi bi-award-fill text-warning me-1"></i>
+      <span>SCHOLARSHIP PORTFOLIO & BIOGRAPHY</span>
     </div>
     <h1 class="cyber-glitch-text" data-original-text="Lim Jun Chuan">Lim Jun Chuan</h1>
     <p>Technology is most powerful when it serves a human purpose.</p>
     <div class="chips">
-      <span><i class="bi bi-patch-check-fill text-info"></i> MOE ETPS Scholar</span>
-      <span><i class="bi bi-cpu-fill text-warning"></i> Engineering Systems</span>
-      <span><i class="bi bi-heart-fill text-danger"></i> Community Leadership</span>
+      <span><i class="bi bi-patch-check-fill text-info me-1"></i> MOE ETPS Scholar</span>
+      <span><i class="bi bi-cpu-fill text-warning me-1"></i> Engineering & Tech</span>
+      <span><i class="bi bi-heart-fill text-danger me-1"></i> Community Service</span>
     </div>
   </header>
 
   <main>
     <!-- EXPERIENCES -->
     <section id="experience">
-      <h2>Experiences</h2>
+      <h2>Experiences & Internships</h2>
       
-      <div class="acc reveal" data-bg="images/borgwarner.svg">
-        <button><i class="bi bi-gear-wide-connected text-info me-2"></i> Professional Internship: BorgWarner</button>
-        <div class="acc-body">
-          <div class="borgwarner-copy">
-            <p>During my internship at BorgWarner, I developed crucial 21st-century competencies like collaboration and communication skills. Working with a cross-functional team, I learned about the importance of fostering open communication and active listening among team members. The collaborative approach allowed us to find effective solutions and improve our processes. I helped address process inefficiencies by fostering open communication and encouraging active listening among team members.</p>
-            <p>I learned that success depends not just on technical expertise, but also on the ability to work well with others and build trust. I took part in BorgWarner’s engineering internship where I learned about the engineering processes, worked with mentors, and improved my problem-solving skills. These experiences have shown me how vital teamwork and clear communication are in professional environments where collaboration among professionals is essential for providing the best results.</p>
+      <div class="exp-card">
+        <div class="exp-header-banner">
+          <div class="d-flex align-items-center gap-3">
+            <div class="exp-icon-wrapper">
+              <img src="images/borgwarner.svg" alt="BorgWarner">
+            </div>
+            <div>
+              <h3 class="exp-header-title">Professional Internship: BorgWarner</h3>
+              <span style="font-size: 0.85rem; color: var(--teal); font-weight: 600;">Engineering Internship & Cross-Functional Collaboration</span>
+            </div>
           </div>
+        </div>
+        <div class="exp-body">
+          <p>During my internship at BorgWarner, I developed crucial 21st-century competencies like collaboration and communication skills. Working with a cross-functional team, I learned about the importance of fostering open communication and active listening among team members. The collaborative approach allowed us to find effective solutions and improve our processes. I helped address process inefficiencies by fostering open communication and encouraging active listening among team members.</p>
+          <p>I learned that success depends not just on technical expertise, but also on the ability to work well with others and build trust. I took part in BorgWarner’s engineering internship where I learned about the engineering processes, worked with mentors, and improved my problem-solving skills. These experiences have shown me how vital teamwork and clear communication are in professional environments where collaboration among professionals is essential for providing the best results.</p>
         </div>
       </div>
 
-      <div class="acc reveal" data-bg="images/carnival.svg">
-        <button><i class="bi bi-universal-access text-danger me-2"></i> Disability Awareness and Experiential Carnival</button>
-        <div class="acc-body">
-          <div>
-            <p>As an organiser for the national-level <b>Disability Awareness and Experiential Carnival</b> at Boon Lay Community Club, I demonstrated <b>innovation</b>, <b>adaptability</b>, and <b>resilience</b> by designing interactive, hands-on activities that moved beyond passive awareness to foster genuine <b>empathy</b>, <b>understanding</b>, and <b>inclusivity</b>. My team and I developed experiential simulations—such as navigating spaces blindfolded, communicating without speaking, and playing wheelchair soccer—allowing participants to step into the shoes of disabled individuals and experience firsthand the physical and emotional barriers they encounter daily.</p>
-            <p>To ensure <b>excellence</b>, I meticulously oversaw <b>logistics, manpower, and resources</b>, maintaining <b>integrity</b> through open communication with external partners and effective <b>collaboration</b> with the Boon Lay Community Club to navigate planning challenges. This project successfully sparked action, inspiring participants to promote <b>accessibility</b> and create inclusive spaces where everyone feels <b>valued</b>.</p>
+      <div class="exp-card">
+        <div class="exp-header-banner">
+          <div class="d-flex align-items-center gap-3">
+            <div class="exp-icon-wrapper">
+              <img src="images/carnival.svg" alt="Carnival">
+            </div>
+            <div>
+              <h3 class="exp-header-title">Disability Awareness and Experiential Carnival</h3>
+              <span style="font-size: 0.85rem; color: var(--violet); font-weight: 600;">Lead Organizer & Experiential Activity Designer</span>
+            </div>
           </div>
+        </div>
+        <div class="exp-body">
+          <p>As an organiser for the national-level <b>Disability Awareness and Experiential Carnival</b> at Boon Lay Community Club, I demonstrated <b>innovation</b>, <b>adaptability</b>, and <b>resilience</b> by designing interactive, hands-on activities that moved beyond passive awareness to foster genuine <b>empathy</b>, <b>understanding</b>, and <b>inclusivity</b>. My team and I developed experiential simulations—such as navigating spaces blindfolded, communicating without speaking, and playing wheelchair soccer—allowing participants to step into the shoes of disabled individuals and experience firsthand the physical and emotional barriers they encounter daily.</p>
+          <p>To ensure <b>excellence</b>, I meticulously oversaw <b>logistics, manpower, and resources</b>, maintaining <b>integrity</b> through open communication with external partners and effective <b>collaboration</b> with the Boon Lay Community Club to navigate planning challenges. This project successfully sparked action, inspiring participants to promote <b>accessibility</b> and create inclusive spaces where everyone feels <b>valued</b>.</p>
         </div>
       </div>
 
-      <div class="acc reveal" data-bg="images/reading.svg">
-        <button><i class="bi bi-book-half text-warning me-2"></i> Reading Wonders Literacy Programme</button>
-        <div class="acc-body">
-          <div>
-            <p>Driven by a commitment to <b>equal opportunity</b>, I led a <b>literacy programme</b> for Primary 1 students at West Grove Primary School who were struggling with reading. I realised that education is the ultimate <b>door-opener</b>, so I used a <b>flexible teaching style</b>—using pictures and storytelling to match each child’s interests.</p>
-            <p>This experience taught me the true meaning of <b>kindness and patience</b>; I learned that celebrating <b>small wins</b>, like a student decoding their first sentence, is the key to <b>building confidence</b>. Beyond just teaching skills, I saw how education gives children the <b>agency</b> to succeed. This work strengthened my <b>adaptability</b> and my desire to use <b>compassionate leadership</b> to ensure every individual has the support they need to reach their full potential.</p>
+      <div class="exp-card">
+        <div class="exp-header-banner">
+          <div class="d-flex align-items-center gap-3">
+            <div class="exp-icon-wrapper">
+              <img src="images/reading.svg" alt="Reading Wonders">
+            </div>
+            <div>
+              <h3 class="exp-header-title">Reading Wonders Literacy Programme</h3>
+              <span style="font-size: 0.85rem; color: var(--gold); font-weight: 600;">Primary 1 Student Reading Mentorship</span>
+            </div>
           </div>
+        </div>
+        <div class="exp-body">
+          <p>Driven by a commitment to <b>equal opportunity</b>, I led a <b>literacy programme</b> for Primary 1 students at West Grove Primary School who were struggling with reading. I realised that education is the ultimate <b>door-opener</b>, so I used a <b>flexible teaching style</b>—using pictures and storytelling to match each child’s interests.</p>
+          <p>This experience taught me the true meaning of <b>kindness and patience</b>; I learned that celebrating <b>small wins</b>, like a student decoding their first sentence, is the key to <b>building confidence</b>. Beyond just teaching skills, I saw how education gives children the <b>agency</b> to succeed. This work strengthened my <b>adaptability</b> and my desire to use <b>compassionate leadership</b> to ensure every individual has the support they need to reach their full potential.</p>
         </div>
       </div>
 
-      <div class="acc reveal" data-bg="images/reminiscence.svg">
-        <button><i class="bi bi-flower1 text-success me-2"></i> Project Reminiscence (Elderly Engagement)</button>
-        <div class="acc-body">
-          <div>
-            <p>Through my involvement in <b>Project Reminiscence</b>, I spearheaded outings to the National Orchid Garden for elderly individuals, effectively merging my passion for <b>community service</b> with a dedicated focus on promoting <b>physical, mental, and social well-being</b>. By coordinating closely with volunteers from the <b>SAGE Counselling Centre</b>, I honed critical <b>leadership and communication skills</b> while ensuring every participant felt comfortable and deeply engaged.</p>
-            <p>This hands-on experience provided a profound understanding of <b>holistic care</b>, as I assisted those with <b>mobility challenges</b> by navigating wheelchairs across slopes and offering constant reassurance. Witnessing how meaningful <b>social interaction</b> and <b>inclusivity</b> directly uplift <b>mental and emotional health</b> has reinforced my <b>empathy</b> and <b>commitment to supporting the well-being of others</b>.</p>
+      <div class="exp-card">
+        <div class="exp-header-banner">
+          <div class="d-flex align-items-center gap-3">
+            <div class="exp-icon-wrapper">
+              <img src="images/reminiscence.svg" alt="Project Reminiscence">
+            </div>
+            <div>
+              <h3 class="exp-header-title">Project Reminiscence (Elderly Engagement)</h3>
+              <span style="font-size: 0.85rem; color: var(--green); font-weight: 600;">National Orchid Garden Outings with SAGE Counselling Centre</span>
+            </div>
           </div>
+        </div>
+        <div class="exp-body">
+          <p>Through my involvement in <b>Project Reminiscence</b>, I spearheaded outings to the National Orchid Garden for elderly individuals, effectively merging my passion for <b>community service</b> with a dedicated focus on promoting <b>physical, mental, and social well-being</b>. By coordinating closely with volunteers from the <b>SAGE Counselling Centre</b>, I honed critical <b>leadership and communication skills</b> while ensuring every participant felt comfortable and deeply engaged.</p>
+          <p>This hands-on experience provided a profound understanding of <b>holistic care</b>, as I assisted those with <b>mobility challenges</b> by navigating wheelchairs across slopes and offering constant reassurance. Witnessing how meaningful <b>social interaction</b> and <b>inclusivity</b> directly uplift <b>mental and emotional health</b> has reinforced my <b>empathy</b> and <b>commitment to supporting the well-being of others</b>.</p>
         </div>
       </div>
     </section>
@@ -155,91 +183,132 @@
     <section id="awards">
       <h2>Awards & Distinctions</h2>
       
-      <div class="acc reveal" data-bg="images/etps.svg">
-        <button><i class="bi bi-trophy-fill text-warning me-2"></i> MOE ETPS Scholarship</button>
-        <div class="acc-body">
-          <div>
-            <p>I received the <b>Engineering and Tech Programme (ETPS) Scholarship</b> from the <b>Ministry of Education (MOE)</b>, recognising my <b>excellence in Math and Science</b> and my <b>aptitude for cross-disciplinary, hands-on learning</b>. This prestigious award affirms my <b>analytical skills</b>, <b>problem-solving ability</b>, and <b>perseverance</b> in tackling challenging academic pursuits. It has further strengthened my <b>passion for engineering</b>, where I can apply <b>scientific knowledge</b> to address <b>real-world challenges</b>.</p>
+      <div class="exp-card">
+        <div class="exp-header-banner">
+          <div class="d-flex align-items-center gap-3">
+            <div class="exp-icon-wrapper">
+              <img src="images/etps.svg" alt="ETPS Scholarship">
+            </div>
+            <div>
+              <h3 class="exp-header-title">MOE Engineering & Tech Programme (ETPS) Scholarship</h3>
+              <span style="font-size: 0.85rem; color: var(--teal); font-weight: 600;">Ministry of Education Singapore (2023, 2024)</span>
+            </div>
           </div>
+        </div>
+        <div class="exp-body">
+          <p>I received the <b>Engineering and Tech Programme (ETPS) Scholarship</b> from the <b>Ministry of Education (MOE)</b>, recognising my <b>excellence in Math and Science</b> and my <b>aptitude for cross-disciplinary, hands-on learning</b>. This prestigious award affirms my <b>analytical skills</b>, <b>problem-solving ability</b>, and <b>perseverance</b> in tackling challenging academic pursuits. It has further strengthened my <b>passion for engineering</b>, where I can apply <b>scientific knowledge</b> to address <b>real-world challenges</b>.</p>
         </div>
       </div>
 
-      <div class="acc reveal" data-bg="images/edusave.svg">
-        <button><i class="bi bi-award-fill text-info me-2"></i> Edusave Certificate of Academic Achievement</button>
-        <div class="acc-body">
-          <div>
-            <p>Receiving the <b>Edusave Certificate of Academic Achievement</b> for five consecutive years reflects my unwavering <b>determination, discipline, and dedication</b>. This consistent <b>academic excellence</b> demonstrates my ability to <b>persevere through challenges, master complex concepts, and maintain high standards</b>.</p>
+      <div class="exp-card">
+        <div class="exp-header-banner">
+          <div class="d-flex align-items-center gap-3">
+            <div class="exp-icon-wrapper">
+              <img src="images/edusave.svg" alt="Edusave">
+            </div>
+            <div>
+              <h3 class="exp-header-title">Edusave Certificate of Academic Achievement</h3>
+              <span style="font-size: 0.85rem; color: var(--gold); font-weight: 600;">Consecutive 5-Year Recipient (2021–2024)</span>
+            </div>
           </div>
+        </div>
+        <div class="exp-body">
+          <p>Receiving the <b>Edusave Certificate of Academic Achievement</b> for five consecutive years reflects my unwavering <b>determination, discipline, and dedication</b>. This consistent <b>academic excellence</b> demonstrates my ability to <b>persevere through challenges, master complex concepts, and maintain high standards</b>.</p>
         </div>
       </div>
 
-      <div class="acc reveal" data-bg="images/amc.svg">
-        <button><i class="bi bi-calculator-fill text-danger me-2"></i> Australian Mathematics Competition (Distinction)</button>
-        <div class="acc-body">
-          <div>
-            <p>Achieving a Distinction in the Australian Mathematics Competition highlights my strong analytical thinking, problem-solving skills, and ability to apply critical and higher-order thinking. Complex projects demand advanced problem-solving and strategic decision-making. This achievement reflects my ability to approach multifaceted challenges methodically, think critically, and synthesise information to find effective solutions.</p>
+      <div class="exp-card">
+        <div class="exp-header-banner">
+          <div class="d-flex align-items-center gap-3">
+            <div class="exp-icon-wrapper">
+              <img src="images/amc.svg" alt="AMC">
+            </div>
+            <div>
+              <h3 class="exp-header-title">Australian Mathematics Competition</h3>
+              <span style="font-size: 0.85rem; color: var(--violet); font-weight: 600;">Certificate of Distinction</span>
+            </div>
           </div>
+        </div>
+        <div class="exp-body">
+          <p>Achieving a Distinction in the Australian Mathematics Competition highlights my strong analytical thinking, problem-solving skills, and ability to apply critical and higher-order thinking. Complex projects demand advanced problem-solving and strategic decision-making. This achievement reflects my ability to approach multifaceted challenges methodically, think critically, and synthesise information to find effective solutions.</p>
         </div>
       </div>
 
-      <div class="acc reveal" data-bg="images/science.svg">
-        <button><i class="bi bi-virus text-success me-2"></i> UNSW Global REACH Assessments in Science (Exemplary)</button>
-        <div class="acc-body">
-          <div>
-            <p>Achieving an <b>Exemplary award</b> (top 1% of participants in Singapore) in the UNSW Global REACH Assessments in Science demonstrates my strong grasp of scientific concepts and my ability to think critically and analytically. This recognition reflects not only my dedication to mastering scientific knowledge but also my ability to apply higher-order thinking to complex problems.</p>
+      <div class="exp-card">
+        <div class="exp-header-banner">
+          <div class="d-flex align-items-center gap-3">
+            <div class="exp-icon-wrapper">
+              <img src="images/science.svg" alt="UNSW Science">
+            </div>
+            <div>
+              <h3 class="exp-header-title">UNSW Global REACH Assessments in Science</h3>
+              <span style="font-size: 0.85rem; color: var(--green); font-weight: 600;">Exemplary Certificate (Top 1% in Singapore)</span>
+            </div>
           </div>
+        </div>
+        <div class="exp-body">
+          <p>Achieving an <b>Exemplary award</b> in the UNSW Global REACH Assessments in Science demonstrates my strong grasp of scientific concepts and my ability to think critically and analytically. This recognition reflects not only my dedication to mastering scientific knowledge but also my ability to apply higher-order thinking to complex problems—skills that are crucial for tackling rigorous academic challenges.</p>
         </div>
       </div>
     </section>
 
-    <!-- CCA -->
+    <!-- CCA PHOTO SHOWCASE -->
     <section id="cca">
-      <h2>Co-Curricular Activities (CCA)</h2>
-      <div class="reveal">
-        <div class="tabs" data-tabs role="tablist">
-          <button role="tab" aria-selected="true"><i class="bi bi-music-note-beamed me-1"></i> Chinese Orchestra</button>
-          <button role="tab" aria-selected="false"><i class="bi bi-newspaper me-1"></i> Editorial Club</button>
+      <h2>School Activities & CCA Highlights</h2>
+      
+      <div class="tabs" data-tabs role="tablist">
+        <button role="tab" aria-selected="true"><i class="bi bi-music-note-beamed me-1"></i> Chinese Orchestra</button>
+        <button role="tab" aria-selected="false"><i class="bi bi-newspaper me-1"></i> School Media Editorial Club</button>
+      </div>
+
+      <!-- Chinese Orchestra Panel with Photo -->
+      <div class="panel show">
+        <div class="rounded overflow-hidden mb-4 border border-white border-opacity-25 shadow" style="max-height: 380px;">
+          <img src="images/chinese-orchestra-card.png" alt="BPGHS Chinese Orchestra SYF Distinction" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <div class="panel show" data-bg="images/chinese-orchestra-card.png">
-          <p>As a dedicated member of the BPGHS Chinese Orchestra, I consistently demonstrated my passion for Chinese orchestral music through active participation and commitment. Despite initial setbacks, including the challenge of learning a new instrument and mastering musical scores from scratch, I did not make the cut after my first audition for the Singapore Youth Festival (SYF) Arts Presentation 2021 team. Rather than allowing this to discourage me, I treated it as an opportunity for growth, dedicating myself to disciplined practice and proactively seeking guidance from seniors to refine my technique, strengthen my instrument mastery, and improve my ability to synchronise with the ensemble. Through perseverance and determination, I successfully re-auditioned and became an integral member of the team.</p>
-          <p>Beyond my personal progress, I also contributed meaningfully as an EXCO member, where I played a key role in fostering teamwork and encouraging my peers to work towards shared goals. Our collective efforts culminated in us achieving a <b>Certificate of Distinction</b> at the SYF Arts Presentation.</p>
+        <h4 style="color: #fff; margin-bottom: 0.8rem;">BPGHS Chinese Orchestra // EXCO & Performance Journey</h4>
+        <p>As a dedicated member of the BPGHS Chinese Orchestra, I consistently demonstrated my passion for Chinese orchestral music through active participation and commitment. Despite initial setbacks, including the challenge of learning a new instrument and mastering musical scores from scratch, I did not make the cut after my first audition for the Singapore Youth Festival (SYF) Arts Presentation 2021 team. Rather than allowing this to discourage me, I treated it as an opportunity for growth, dedicating myself to disciplined practice and proactively seeking guidance from seniors to refine my technique, strengthen my instrument mastery, and improve my ability to synchronise with the ensemble. Through perseverance and determination, I successfully re-auditioned and became an integral member of the team.</p>
+        <p>Beyond my personal progress, I also contributed meaningfully as an EXCO member, where I played a key role in fostering teamwork and encouraging my peers to work towards shared goals. I actively participated in numerous school performances, including the annual Chinese New Year and Mid-Autumn Festival celebrations, Open House showcases, and the CCA Roadshow, further demonstrating my commitment to the orchestra. Through this experience, I not only deepened my appreciation for music but also strengthened my resilience, adaptability, and ability to collaborate effectively under pressure, culminating in achieving a <b>Certificate of Distinction at the SYF Arts Presentation</b>.</p>
+      </div>
+
+      <!-- Editorial Club Panel with Photo -->
+      <div class="panel">
+        <div class="rounded overflow-hidden mb-4 border border-white border-opacity-25 shadow" style="max-height: 380px;">
+          <img src="images/editorial-club-card.png" alt="School Media Team" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <div class="panel" data-bg="images/editorial-club-card.png">
-          <p>As a member of the school media team, I wrote articles about school events such as Teachers’ Day, RVmun, and YLEAD. I conducted interviews with many people and participated in these events to gain personal insights. I also collaborated with various CCAs, such as Venture Scouts and HACAs, to publish their articles, forming new connections and improving my writing skills in the process. I learned new writing techniques to make my articles more interesting and developed my communication skills to ensure interviewees felt comfortable during interviews.</p>
-          <p>Through this experience, I learned 21st-century competencies such as self-awareness, self-management, responsible decision-making, and social awareness. Interviewing involved empathetic listening and understanding others’ perspectives and experiences.</p>
-        </div>
+        <h4 style="color: #fff; margin-bottom: 0.8rem;">School Media Team & Editorial Club</h4>
+        <p>As a member of the school media team, I wrote articles about school events such as Teachers’ Day, RVmun, and YLEAD. I conducted interviews with many people and participated in these events to gain personal insights. I also collaborated with various CCAs, such as Venture Scouts and HACAs, to publish their articles, forming new connections and improving my writing skills in the process. I learned new writing techniques to make my articles more interesting and developed my communication skills to ensure interviewees felt comfortable during interviews.</p>
+        <p>Through this experience, I learned 21st-century competencies such as self-awareness, self-management, responsible decision-making, and social awareness. Interviewing involved empathetic listening and understanding others’ perspectives and experiences. I learned when to be quiet and when to ask questions, developing empathy, cultural sensitivity, and a broader worldview that is essential for building strong relationships, resolving conflicts, and collaborating effectively with diverse groups. Crafting insightful questions and analysing responses enhanced my critical thinking skills, enabling me to evaluate information, identify patterns, and draw conclusions more effectively.</p>
       </div>
     </section>
 
     <!-- TESTIMONIALS -->
     <section id="testimonials">
-      <h2>Official Testimonials</h2>
-      <div class="reveal">
-        <div class="tabs" data-tabs role="tablist">
-          <button role="tab" aria-selected="true"><i class="bi bi-mortarboard-fill me-1"></i> Bukit Panjang Govt. High School</button>
-          <button role="tab" aria-selected="false"><i class="bi bi-building me-1"></i> River Valley High School (JC)</button>
-        </div>
-        <div class="panel show">
-          <p>“Jun Chuan is a hardworking, conscientious, and motivated pupil. He shows an avid interest in his work and is keen to learn. His positive learning attitude is evident in his inquisitive nature and his willingness to ask questions whenever he is in doubt. With strong self-discipline, Jun Chuan has made outstanding progress in his academic pursuits. As a self-directed learner, he has maintained excellent grades across all subjects. His amiable nature allows him to work well with others. In group settings, Jun Chuan respects differing viewpoints and demonstrates that he is a reliable and cooperative team player.”</p>
-          <p>“Jun Chuan has shown great proficiency and talent in Mathematics and Science. He is a perceptive and sharp individual with a strong drive to understand how things work... Jun Chuan is a driven and curious student who has demonstrated strong leadership qualities. His personal traits and character will undoubtedly stand him in good stead as he continues to pursue success in his future endeavours.”</p>
-        </div>
-        <div class="panel">
-          <p>“Lim Jun Chuan was a student of River Valley High School’s Junior College section from 2023 to 2024. He offered Physics, Chemistry, Mathematics, and Economics at H2 level, and General Paper, Chinese and Project Work at H1 level for the Cambridge General Certificate of Education Advanced Level Examination.”</p>
-          <p>“Jun Chuan embodies one of the 21st century competencies as a critical thinker. He is a thoughtful and creative individual who thrives when he is challenged to look at issues and problems from multiple perspectives... When tasked to analyse the various uses and inner workings of satellites, Jun Chuan carried his research into the area of satellites, giving greater breadth of perspective by studying how satellite technology and space exploration were influenced by this event.”</p>
-          <p>“When he joined a new project team to design satellites with unfamiliar team members, he quickly adapted by actively listening to his group mates, seeking to understand their perspectives, ideas, and concerns, learning from their expertise, and adjusting his approach to maximise teamwork and productivity.”</p>
-        </div>
+      <h2>Teacher Testimonials</h2>
+      <div class="tabs" data-tabs role="tablist">
+        <button role="tab" aria-selected="true"><i class="bi bi-mortarboard-fill me-1"></i> Bukit Panjang Govt. High School</button>
+        <button role="tab" aria-selected="false"><i class="bi bi-building me-1"></i> River Valley High School (JC)</button>
+      </div>
+      <div class="panel show">
+        <p>“Jun Chuan is a hardworking, conscientious, and motivated pupil. He shows an avid interest in his work and is keen to learn. His positive learning attitude is evident in his inquisitive nature and his willingness to ask questions whenever he is in doubt. With strong self-discipline, Jun Chuan has made outstanding progress in his academic pursuits. As a self-directed learner, he has maintained excellent grades across all subjects. His amiable nature allows him to work well with others. In group settings, Jun Chuan respects differing viewpoints and demonstrates that he is a reliable and cooperative team player. He is also caring towards others and readily extends a helping hand to his peers.”</p>
+        <p>“Jun Chuan has shown great proficiency and talent in Mathematics and Science. He is a perceptive and sharp individual with a strong drive to understand how things work... Jun Chuan is a driven and curious student who has demonstrated strong leadership qualities. His personal traits and character will undoubtedly stand him in good stead as he continues to pursue success in his future endeavours.”</p>
+      </div>
+      <div class="panel">
+        <p>“Lim Jun Chuan was a student of River Valley High School’s Junior College section from 2023 to 2024. He offered Physics, Chemistry, Mathematics, and Economics at H2 level, and General Paper, Chinese and Project Work at H1 level for the Cambridge General Certificate of Education Advanced Level Examination.”</p>
+        <p>“Jun Chuan embodies one of the 21st century competencies as a critical thinker. He is a thoughtful and creative individual who thrives when he is challenged to look at issues and problems from multiple perspectives... When tasked to analyse the various uses and inner workings of satellites, Jun Chuan carried his research into the area of satellites, giving greater breadth of perspective by studying how satellite technology and space exploration were influenced by this event.”</p>
+        <p>“When he joined a new project team to design satellites with unfamiliar team members, he quickly adapted by actively listening to his group mates, seeking to understand their perspectives, ideas, and concerns, learning from their expertise, and adjusting his approach to maximise teamwork and productivity. This active listening not only helped Jun Chuan grasp the collective knowledge and experience of the team but also allowed him to build rapport and trust with his teammates.”</p>
       </div>
     </section>
 
     <!-- AWARD INDEX TABLE -->
     <section id="list">
-      <h2>Award Names & Chronology</h2>
-      <ul class="awards reveal">
+      <h2>Full Award List</h2>
+      <ul class="awards">
         <li><span><b>MOE Engineering &amp; Tech Programme Scholarship</b></span><em>2023, 2024</em></li>
         <li><span><b>National Youth Achievement Award (NYAA)</b> – Bronze Medal</span><em>2022</em></li>
         <li><span><b>Singapore Youth Festival (SYF) Arts Presentation</b> – Distinction (Chinese Orchestra)</span><em>2021</em></li>
         <li><span><b>Australian Mathematics Competition</b> – Certificate of Distinction</span><em>2019</em></li>
-        <li><span><b>UNSW Global Reach Assessments for Science</b> – Exemplary Certificate (Top 1%)</span><em>2019</em></li>
+        <li><span><b>UNSW Global Reach Assessments for Science</b> – Exemplary Certificate (Top 1% in Singapore)</span><em>2019</em></li>
       </ul>
 
       <ul class="awards awards-more" id="awards-more" hidden>
@@ -252,10 +321,10 @@
       <button class="awards-toggle" id="awards-toggle" aria-expanded="false" aria-controls="awards-more">Show all awards</button>
     </section>
 
-    <!-- PERSONALITY / MISSION -->
+    <!-- PERSONALITY / PHILOSOPHY -->
     <section id="personality">
-      <h2>Personal Philosophy & Vision</h2>
-      <div class="reveal cyber-card cyber-cut">
+      <h2>My Philosophy & Vision</h2>
+      <div class="exp-card p-4">
         <p>Driven by a fascination with complex problem-solving, I have focused my academic journey on mastering the languages of the future, including Python and C++. However, I believe technology is most powerful when it serves a human purpose. My study and practice has equipped me with the analytical tools to build efficient systems, but my work beyond the screen defines my mission.</p>
         <p>Organising the Disability Awareness and Experiential Carnival taught me that true leadership lies in creating inclusive spaces through logistics and empathy. Whether tutoring children in literacy or accompanying the elderly at the National Orchid Garden, I strive to bridge gaps in accessibility. I aim to leverage my technical expertise and discipline to develop innovative solutions for social good—ensuring that progress is accessible to everyone.</p>
       </div>
@@ -263,20 +332,20 @@
 
     <!-- LINKS -->
     <section id="links">
-      <h2>Certifications & Media</h2>
-      <p class="links reveal">
+      <h2>Certificates & Media</h2>
+      <p class="links">
         <a href="https://drive.google.com/file/d/1J1Yv6Yk2QS0RFgWHPvFAE156v3FK8xhd/view?usp=sharing" target="_blank" rel="noopener">
-          <i class="bi bi-file-earmark-pdf-fill"></i> View Certifications Dossier
+          <i class="bi bi-file-earmark-pdf-fill"></i> View Official Certifications (PDF)
         </a>
         <a href="images/portrait.jpg" target="_blank" rel="noopener">
-          <i class="bi bi-person-bounding-box"></i> View Operator Photo
+          <i class="bi bi-person-bounding-box"></i> View Portrait Photo
         </a>
       </p>
     </section>
   </main>
 
   <footer>
-    Lim Jun Chuan · Scholarship Portfolio Dossier // 2026 Edition
+    Lim Jun Chuan · Personal Portfolio & Biography
   </footer>
 
   <!-- Scripts -->
@@ -284,7 +353,6 @@
   <script src="cyber-effects.js"></script>
   <script src="portfolio/script.js"></script>
   <script>
-    // Load Shared Navbar
     fetch("navbar.html")
       .then(res => res.text())
       .then(html => {
