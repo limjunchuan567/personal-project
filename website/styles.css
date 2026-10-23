@@ -663,6 +663,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Tables */
 .cyber-table {
   width: 100%;
+  max-width: 100%;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-collapse: separate;
   border-spacing: 0;
   margin: 1rem 0;
@@ -695,4 +699,122 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-muted);
   font-size: 0.9rem;
   text-align: center;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS
+   ============================================================ */
+
+/* Tablet & Mobile Navigation Menu */
+@media (max-width: 991.98px) {
+  .site-navbar {
+    padding: 0.65rem 1rem;
+  }
+
+  .site-navbar .navbar-collapse {
+    background: rgba(10, 16, 38, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 0.75rem;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  }
+
+  .site-navbar .nav-link {
+    padding: 0.75rem 1rem !important;
+    border-radius: 8px;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+  }
+
+  .site-navbar .nav-link:hover,
+  .site-navbar .nav-link.active {
+    background: rgba(0, 240, 255, 0.12);
+  }
+
+  .site-navbar .nav-link.active::after {
+    display: none;
+  }
+}
+
+/* Smartphone Screens (< 768px) */
+@media (max-width: 768px) {
+  .site-hero {
+    padding: 3.5rem 1rem 2.5rem;
+  }
+
+  .cyber-card {
+    padding: 1.4rem 1.15rem;
+  }
+}
+
+/* Narrow Phone Screens (< 576px) */
+@media (max-width: 576px) {
+  .site-hero {
+    padding: 2.8rem 1rem 2rem;
+  }
+
+  .hero-welcome-badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.8rem;
+    gap: 0.4rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.3rem;
+  }
+
+  /* Full-width touch friendly hero action buttons */
+  .btn-cyber {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.88rem;
+  }
+
+  .cyber-brand {
+    font-size: 1.1rem;
+  }
+
+  .cyber-audio-btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  .cyber-code-block {
+    padding: 0.85rem 1rem;
+    font-size: 0.82rem;
+  }
+
+  .cyber-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1rem 0;
+  }
+
+  .cyber-table {
+    min-width: 480px;
+  }
+}
+
+/* Extra Compact Screens (< 380px) */
+@media (max-width: 380px) {
+  .cyber-brand {
+    font-size: 0.98rem;
+  }
+
+  .cyber-audio-btn span {
+    display: none;
+  }
 }

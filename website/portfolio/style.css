@@ -168,6 +168,7 @@ main {
 
 section {
   padding-top: 4.5rem;
+  scroll-margin-top: 2rem;
 }
 
 section > h2 {
@@ -410,4 +411,126 @@ footer {
   font-size: 0.9rem;
   border-top: 1px solid var(--line);
   background: rgba(8, 12, 30, 0.95);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS
+   ============================================================ */
+
+/* Tablet and Mobile: In-Page Subnav horizontal pill carousel */
+@media (max-width: 768px) {
+  .page-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 0.6rem 0.85rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .page-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page-nav a {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.82rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  main {
+    padding: 0 1.1rem 3rem;
+  }
+
+  section {
+    padding-top: 3.5rem;
+    scroll-margin-top: 1.5rem;
+  }
+}
+
+/* Smartphone screens (e.g. iPhone, Samsung Galaxy) */
+@media (max-width: 576px) {
+  .hero {
+    padding: 2.8rem 1rem 2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+
+  .chips {
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .chips span {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+  }
+
+  section > h2 {
+    font-size: 1.55rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .exp-header-banner {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .exp-header-banner .d-flex {
+    width: 100%;
+  }
+
+  .card-icon-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+
+  .exp-header-title {
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .exp-body {
+    padding: 1.15rem 1rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .tabs button {
+    padding: 0.45rem 1rem;
+    font-size: 0.88rem;
+  }
+
+  .panel {
+    padding: 1.2rem 1rem;
+  }
+
+  .awards li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .awards em {
+    font-size: 0.78rem;
+  }
+
+  .links a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0.4rem 0;
+  }
 }

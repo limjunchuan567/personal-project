@@ -10,17 +10,27 @@ const bar = document.getElementById("bar");
 const links = [...document.querySelectorAll(".page-nav a")];
 const secs = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
 
-function onScroll() {
-  const max = document.documentElement.scrollHeight - innerHeight;
-  if (bar && max > 0) {
-    bar.style.width = (scrollY / max) * 100 + "%";
+  let lastCur = -1;
+  function onScroll() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    if (bar && max > 0) {
+      bar.style.width = (scrollY / max) * 100 + "%";
+    }
+    let cur = -1;
+    secs.forEach((s, i) => { 
+      if (s.getBoundingClientRect().top < innerHeight * 0.4) cur = i; 
+    });
+    if (cur !== lastCur) {
+      lastCur = cur;
+      links.forEach((a, i) => {
+        const isCur = i === cur;
+        a.classList.toggle("on", isCur);
+        if (isCur && window.innerWidth <= 768 && a) {
+          a.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      });
+    }
   }
-  let cur = -1;
-  secs.forEach((s, i) => { 
-    if (s.getBoundingClientRect().top < innerHeight * 0.4) cur = i; 
-  });
-  links.forEach((a, i) => a.classList.toggle("on", i === cur));
-}
 addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 

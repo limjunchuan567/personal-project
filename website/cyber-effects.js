@@ -75,6 +75,9 @@
   // 2. INTERACTIVE CYBER BACKGROUND CANVAS
   // ==========================================
   function initCyberCanvas() {
+    if (window._cyberCanvasInitialized) return;
+    window._cyberCanvasInitialized = true;
+
     let canvas = document.getElementById('cyber-canvas');
     if (!canvas) {
       canvas = document.createElement('canvas');
@@ -95,6 +98,19 @@
     });
 
     window.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    // Touch support for mobile phones & tablets
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
       mouse.x = null;
       mouse.y = null;
     });
