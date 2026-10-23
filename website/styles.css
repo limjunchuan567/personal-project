@@ -169,9 +169,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--text-muted) !important;
-  padding: 0.5rem 0.9rem !important;
+  padding: 0.5rem 0.85rem !important;
   transition: all 0.25s ease;
   position: relative;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
 }
 
 .site-navbar .nav-link:hover,
@@ -184,8 +187,8 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0.9rem;
-  right: 0.9rem;
+  left: 0.85rem;
+  right: 0.85rem;
   height: 2px;
   background: var(--neon-cyan);
   box-shadow: var(--neon-cyan-glow);
@@ -193,11 +196,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-status-pill {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  padding: 0.15rem 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.12rem 0.45rem;
   border-radius: 4px;
-  margin-left: 0.4rem;
+  margin-left: 0.45rem;
   vertical-align: middle;
+  white-space: nowrap !important;
+  display: inline-block !important;
+  line-height: 1.2;
 }
 .nav-status-live {
   background: rgba(0, 245, 155, 0.2);
