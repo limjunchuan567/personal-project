@@ -419,10 +419,15 @@ footer {
 
 /* Tablet and Mobile: In-Page Subnav horizontal pill carousel */
 @media (max-width: 768px) {
+  body, body.site-body {
+    background-attachment: scroll !important;
+  }
+
   .page-nav {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
     justify-content: flex-start;
     padding: 0.6rem 0.85rem;
     scrollbar-width: none;

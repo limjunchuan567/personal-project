@@ -102,19 +102,6 @@
       mouse.y = null;
     });
 
-    // Touch support for mobile phones & tablets
-    window.addEventListener('touchmove', (e) => {
-      if (e.touches && e.touches.length > 0) {
-        mouse.x = e.touches[0].clientX;
-        mouse.y = e.touches[0].clientY;
-      }
-    }, { passive: true });
-
-    window.addEventListener('touchend', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-
     window.addEventListener('resize', () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;

@@ -744,6 +744,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Smartphone Screens (< 768px) */
 @media (max-width: 768px) {
+  body, body.site-body {
+    background-attachment: scroll !important;
+  }
+
   .site-hero {
     padding: 3.5rem 1rem 2.5rem;
   }

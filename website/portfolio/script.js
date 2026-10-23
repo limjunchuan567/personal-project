@@ -10,27 +10,30 @@ const bar = document.getElementById("bar");
 const links = [...document.querySelectorAll(".page-nav a")];
 const secs = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
 
-  let lastCur = -1;
-  function onScroll() {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    if (bar && max > 0) {
-      bar.style.width = (scrollY / max) * 100 + "%";
-    }
-    let cur = -1;
-    secs.forEach((s, i) => { 
-      if (s.getBoundingClientRect().top < innerHeight * 0.4) cur = i; 
+let lastCur = -1;
+function onScroll() {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  if (bar && max > 0) {
+    bar.style.width = (scrollY / max) * 100 + "%";
+  }
+  let cur = -1;
+  secs.forEach((s, i) => { 
+    if (s.getBoundingClientRect().top < innerHeight * 0.45) cur = i; 
+  });
+  if (cur !== lastCur) {
+    lastCur = cur;
+    links.forEach((a, i) => {
+      a.classList.toggle("on", i === cur);
     });
-    if (cur !== lastCur) {
-      lastCur = cur;
-      links.forEach((a, i) => {
-        const isCur = i === cur;
-        a.classList.toggle("on", isCur);
-        if (isCur && window.innerWidth <= 768 && a) {
-          a.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-      });
+    // Safely update subnav horizontal position WITHOUT touching window vertical scroll
+    const pageNav = document.querySelector('.page-nav');
+    if (pageNav && cur >= 0 && links[cur]) {
+      const targetLink = links[cur];
+      const targetScrollLeft = targetLink.offsetLeft - (pageNav.clientWidth / 2) + (targetLink.clientWidth / 2);
+      pageNav.scrollLeft = targetScrollLeft;
     }
   }
+}
 addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
